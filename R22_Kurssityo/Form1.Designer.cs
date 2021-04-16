@@ -40,6 +40,7 @@ namespace R22_Kurssityo
             this.btn1.TabIndex = 0;
             this.btn1.Text = "Nappi";
             this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // Form1
             // 

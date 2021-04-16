@@ -16,5 +16,10 @@ namespace R22_Kurssityo
         {
             InitializeComponent();
         }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            // Testimuutos
+        }
     }
 }
