@@ -55,7 +55,7 @@ namespace R22_Kurssityo
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(39, 72);
+            this.btn1.Location = new System.Drawing.Point(370, 421);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(157, 69);
             this.btn1.TabIndex = 0;
@@ -74,7 +74,7 @@ namespace R22_Kurssityo
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 304);
+            this.button1.Location = new System.Drawing.Point(217, 418);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 74);
             this.button1.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace R22_Kurssityo
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(166, 365);
+            this.linkLabel1.Location = new System.Drawing.Point(417, 365);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(55, 13);
             this.linkLabel1.TabIndex = 3;
@@ -114,7 +114,7 @@ namespace R22_Kurssityo
             this.emailDataGridViewTextBoxColumn,
             this.puhelinnroDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.asiakasBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(269, 72);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(747, 205);
             this.dataGridView1.TabIndex = 5;
@@ -184,7 +184,7 @@ namespace R22_Kurssityo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 530);
+            this.ClientSize = new System.Drawing.Size(765, 530);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
