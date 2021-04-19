@@ -34,11 +34,13 @@ namespace R22_Kurssityo
             this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(143, 78);
+            this.btn1.Location = new System.Drawing.Point(5, 12);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(157, 69);
             this.btn1.TabIndex = 0;
@@ -49,7 +51,7 @@ namespace R22_Kurssityo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 27);
+            this.label1.Location = new System.Drawing.Point(102, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 1;
@@ -57,7 +59,7 @@ namespace R22_Kurssityo
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(318, 27);
+            this.button1.Location = new System.Drawing.Point(12, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 74);
             this.button1.TabIndex = 2;
@@ -68,7 +70,7 @@ namespace R22_Kurssityo
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(107, 184);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 180);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(55, 13);
             this.linkLabel1.TabIndex = 3;
@@ -78,17 +80,26 @@ namespace R22_Kurssityo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(334, 196);
+            this.label2.Location = new System.Drawing.Point(105, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(276, 72);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(330, 215);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 236);
+            this.ClientSize = new System.Drawing.Size(696, 401);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button1);
@@ -96,6 +107,7 @@ namespace R22_Kurssityo
             this.Controls.Add(this.btn1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +120,7 @@ namespace R22_Kurssityo
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
