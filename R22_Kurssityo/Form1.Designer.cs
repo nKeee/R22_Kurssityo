@@ -55,12 +55,24 @@ namespace R22_Kurssityo
             this.etunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab_laskutus = new System.Windows.Forms.TabPage();
+            this.tab_varaus = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.varausTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.varausTableAdapter();
+            this.varausidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asiakasidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mokkimokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varattupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vahvistuspvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varattualkupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varattuloppupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -70,6 +82,9 @@ namespace R22_Kurssityo
             this.tab_asiakkaat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tab_varaus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // asiakasBindingSource
@@ -106,7 +121,7 @@ namespace R22_Kurssityo
             this.tab_mokit.Location = new System.Drawing.Point(4, 22);
             this.tab_mokit.Name = "tab_mokit";
             this.tab_mokit.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_mokit.Size = new System.Drawing.Size(664, 510);
+            this.tab_mokit.Size = new System.Drawing.Size(753, 510);
             this.tab_mokit.TabIndex = 1;
             this.tab_mokit.Text = "Mökit";
             this.tab_mokit.UseVisualStyleBackColor = true;
@@ -128,7 +143,7 @@ namespace R22_Kurssityo
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(658, 336);
+            this.dataGridView2.Size = new System.Drawing.Size(747, 336);
             this.dataGridView2.TabIndex = 6;
             // 
             // varusteluDataGridViewTextBoxColumn
@@ -190,7 +205,7 @@ namespace R22_Kurssityo
             this.tab_asiakkaat.Location = new System.Drawing.Point(4, 22);
             this.tab_asiakkaat.Name = "tab_asiakkaat";
             this.tab_asiakkaat.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_asiakkaat.Size = new System.Drawing.Size(664, 510);
+            this.tab_asiakkaat.Size = new System.Drawing.Size(753, 510);
             this.tab_asiakkaat.TabIndex = 0;
             this.tab_asiakkaat.Text = "Asiakkaat";
             this.tab_asiakkaat.UseVisualStyleBackColor = true;
@@ -211,7 +226,7 @@ namespace R22_Kurssityo
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(658, 336);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 336);
             this.dataGridView1.TabIndex = 5;
             // 
             // puhelinnroDataGridViewTextBoxColumn
@@ -256,17 +271,6 @@ namespace R22_Kurssityo
             this.asiakasidDataGridViewTextBoxColumn.HeaderText = "asiakas_id";
             this.asiakasidDataGridViewTextBoxColumn.Name = "asiakasidDataGridViewTextBoxColumn";
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tab_asiakkaat);
-            this.tabControl1.Controls.Add(this.tab_mokit);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(672, 536);
-            this.tabControl1.TabIndex = 6;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(293, 422);
@@ -308,11 +312,113 @@ namespace R22_Kurssityo
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tab_asiakkaat);
+            this.tabControl1.Controls.Add(this.tab_mokit);
+            this.tabControl1.Controls.Add(this.tab_laskutus);
+            this.tabControl1.Controls.Add(this.tab_varaus);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(761, 536);
+            this.tabControl1.TabIndex = 6;
+            // 
+            // tab_laskutus
+            // 
+            this.tab_laskutus.Location = new System.Drawing.Point(4, 22);
+            this.tab_laskutus.Name = "tab_laskutus";
+            this.tab_laskutus.Size = new System.Drawing.Size(753, 510);
+            this.tab_laskutus.TabIndex = 2;
+            this.tab_laskutus.Text = "Laskutus";
+            this.tab_laskutus.UseVisualStyleBackColor = true;
+            // 
+            // tab_varaus
+            // 
+            this.tab_varaus.Controls.Add(this.dataGridView3);
+            this.tab_varaus.Location = new System.Drawing.Point(4, 22);
+            this.tab_varaus.Name = "tab_varaus";
+            this.tab_varaus.Size = new System.Drawing.Size(753, 510);
+            this.tab_varaus.TabIndex = 3;
+            this.tab_varaus.Text = "Varaushallinta";
+            this.tab_varaus.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.varausidDataGridViewTextBoxColumn,
+            this.asiakasidDataGridViewTextBoxColumn1,
+            this.mokkimokkiidDataGridViewTextBoxColumn,
+            this.varattupvmDataGridViewTextBoxColumn,
+            this.vahvistuspvmDataGridViewTextBoxColumn,
+            this.varattualkupvmDataGridViewTextBoxColumn,
+            this.varattuloppupvmDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.varausBindingSource;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(753, 150);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // varausBindingSource
+            // 
+            this.varausBindingSource.DataMember = "varaus";
+            this.varausBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // varausTableAdapter
+            // 
+            this.varausTableAdapter.ClearBeforeFill = true;
+            // 
+            // varausidDataGridViewTextBoxColumn
+            // 
+            this.varausidDataGridViewTextBoxColumn.DataPropertyName = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn.HeaderText = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn.Name = "varausidDataGridViewTextBoxColumn";
+            // 
+            // asiakasidDataGridViewTextBoxColumn1
+            // 
+            this.asiakasidDataGridViewTextBoxColumn1.DataPropertyName = "asiakas_id";
+            this.asiakasidDataGridViewTextBoxColumn1.HeaderText = "asiakas_id";
+            this.asiakasidDataGridViewTextBoxColumn1.Name = "asiakasidDataGridViewTextBoxColumn1";
+            // 
+            // mokkimokkiidDataGridViewTextBoxColumn
+            // 
+            this.mokkimokkiidDataGridViewTextBoxColumn.DataPropertyName = "mokki_mokki_id";
+            this.mokkimokkiidDataGridViewTextBoxColumn.HeaderText = "mokki_mokki_id";
+            this.mokkimokkiidDataGridViewTextBoxColumn.Name = "mokkimokkiidDataGridViewTextBoxColumn";
+            // 
+            // varattupvmDataGridViewTextBoxColumn
+            // 
+            this.varattupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_pvm";
+            this.varattupvmDataGridViewTextBoxColumn.HeaderText = "varattu_pvm";
+            this.varattupvmDataGridViewTextBoxColumn.Name = "varattupvmDataGridViewTextBoxColumn";
+            // 
+            // vahvistuspvmDataGridViewTextBoxColumn
+            // 
+            this.vahvistuspvmDataGridViewTextBoxColumn.DataPropertyName = "vahvistus_pvm";
+            this.vahvistuspvmDataGridViewTextBoxColumn.HeaderText = "vahvistus_pvm";
+            this.vahvistuspvmDataGridViewTextBoxColumn.Name = "vahvistuspvmDataGridViewTextBoxColumn";
+            // 
+            // varattualkupvmDataGridViewTextBoxColumn
+            // 
+            this.varattualkupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_alkupvm";
+            this.varattualkupvmDataGridViewTextBoxColumn.HeaderText = "varattu_alkupvm";
+            this.varattualkupvmDataGridViewTextBoxColumn.Name = "varattualkupvmDataGridViewTextBoxColumn";
+            // 
+            // varattuloppupvmDataGridViewTextBoxColumn
+            // 
+            this.varattuloppupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_loppupvm";
+            this.varattuloppupvmDataGridViewTextBoxColumn.HeaderText = "varattu_loppupvm";
+            this.varattuloppupvmDataGridViewTextBoxColumn.Name = "varattuloppupvmDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 531);
+            this.ClientSize = new System.Drawing.Size(761, 531);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -328,6 +434,9 @@ namespace R22_Kurssityo
             this.tab_asiakkaat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tab_varaus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,6 +459,11 @@ namespace R22_Kurssityo
         private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tab_asiakkaat;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postinroDataGridViewTextBoxColumn;
@@ -359,11 +473,18 @@ namespace R22_Kurssityo
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tab_laskutus;
+        private System.Windows.Forms.TabPage tab_varaus;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.BindingSource varausBindingSource;
+        private DataSet1TableAdapters.varausTableAdapter varausTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varausidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mokkimokkiidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varattupvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vahvistuspvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varattualkupvmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varattuloppupvmDataGridViewTextBoxColumn;
     }
 }
 
