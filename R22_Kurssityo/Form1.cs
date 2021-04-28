@@ -25,5 +25,6 @@ namespace R22_Kurssityo
             // TODO: This line of code loads data into the 'dataSet1.varaus' table. You can move, or remove it, as needed.
             this.varausTableAdapter.Fill(this.dataSet1.varaus);
         }
+
     }
 }
