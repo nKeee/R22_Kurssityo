@@ -25,19 +25,18 @@ namespace R22_Kurssityo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.toimintaalue' table. You can move, or remove it, as needed.
+            this.toimintaalueTableAdapter.Fill(this.dataSet1.toimintaalue);
             //string connectionString = @"Dsn = village newbies; uid = root";
             //con = new MySqlConnection(connectionString);
             //con.Open();
 
             this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
-            // TODO: This line of code loads data into the 'dataSet1.posti' table. You can move, or remove it, as needed.
             this.postiTableAdapter.Fill(this.dataSet1.posti);
-            // TODO: This line of code loads data into the 'dataSet1.palvelu' table. You can move, or remove it, as needed.
             this.palveluTableAdapter.Fill(this.dataSet1.palvelu);
-            // TODO: This line of code loads data into the 'dataSet1.varauksen_palvelut' table. You can move, or remove it, as needed.
             this.varauksen_palvelutTableAdapter.Fill(this.dataSet1.varauksen_palvelut);
-            // TODO: This line of code loads data into the 'dataSet1.varaus' table. You can move, or remove it, as needed.
             this.varausTableAdapter.Fill(this.dataSet1.varaus);
+            this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
         }
 
         private void btn_tallenna_varaus_Click(object sender, EventArgs e)
@@ -70,6 +69,22 @@ namespace R22_Kurssityo
             }
             //var cmd = new MySqlCommand(query, con);
             //MessageBox.Show(cmd.ExecuteReader().Read().ToString());
+        }
+
+        private void btn_uusimokki_Click(object sender, EventArgs e)
+        {
+            Validate();
+            mokkiBindingSource.EndEdit();
+            mokkiTableAdapter.Update(this.dataSet1);
+            mokkiTableAdapter.Insert(cbToimalue.SelectedIndex, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
+        }
+
+        private void btnUusitoimalue_Click(object sender, EventArgs e)
+        {
+            Validate();
+            toimintaalueBindingSource.EndEdit();
+            toimintaalueTableAdapter.Update(this.dataSet1);
+            toimintaalueTableAdapter.Insert(tbToimintaalue.Text);
         }
     }
 }
