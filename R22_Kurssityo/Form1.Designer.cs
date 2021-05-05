@@ -62,6 +62,9 @@ namespace R22_Kurssityo
             this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_laskutus = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnHaeVaraus = new System.Windows.Forms.Button();
+            this.textVarausNumero = new System.Windows.Forms.TextBox();
             this.tab_varaus = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVahvistaVaraus = new System.Windows.Forms.Button();
@@ -119,9 +122,6 @@ namespace R22_Kurssityo
             this.palveluTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.palveluTableAdapter();
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
-            this.textVarausNumero = new System.Windows.Forms.TextBox();
-            this.btnHaeVaraus = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -308,6 +308,8 @@ namespace R22_Kurssityo
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -322,6 +324,7 @@ namespace R22_Kurssityo
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(754, 336);
             this.dataGridView1.TabIndex = 5;
             // 
@@ -330,42 +333,49 @@ namespace R22_Kurssityo
             this.asiakasidDataGridViewTextBoxColumn.DataPropertyName = "asiakas_id";
             this.asiakasidDataGridViewTextBoxColumn.HeaderText = "asiakas_id";
             this.asiakasidDataGridViewTextBoxColumn.Name = "asiakasidDataGridViewTextBoxColumn";
+            this.asiakasidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // postinroDataGridViewTextBoxColumn
             // 
             this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
             this.postinroDataGridViewTextBoxColumn.HeaderText = "postinro";
             this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
+            this.postinroDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // etunimiDataGridViewTextBoxColumn
             // 
             this.etunimiDataGridViewTextBoxColumn.DataPropertyName = "etunimi";
             this.etunimiDataGridViewTextBoxColumn.HeaderText = "etunimi";
             this.etunimiDataGridViewTextBoxColumn.Name = "etunimiDataGridViewTextBoxColumn";
+            this.etunimiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sukunimiDataGridViewTextBoxColumn
             // 
             this.sukunimiDataGridViewTextBoxColumn.DataPropertyName = "sukunimi";
             this.sukunimiDataGridViewTextBoxColumn.HeaderText = "sukunimi";
             this.sukunimiDataGridViewTextBoxColumn.Name = "sukunimiDataGridViewTextBoxColumn";
+            this.sukunimiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lahiosoiteDataGridViewTextBoxColumn
             // 
             this.lahiosoiteDataGridViewTextBoxColumn.DataPropertyName = "lahiosoite";
             this.lahiosoiteDataGridViewTextBoxColumn.HeaderText = "lahiosoite";
             this.lahiosoiteDataGridViewTextBoxColumn.Name = "lahiosoiteDataGridViewTextBoxColumn";
+            this.lahiosoiteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // puhelinnroDataGridViewTextBoxColumn
             // 
             this.puhelinnroDataGridViewTextBoxColumn.DataPropertyName = "puhelinnro";
             this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "puhelinnro";
             this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
+            this.puhelinnroDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tabControl1
             // 
@@ -392,6 +402,32 @@ namespace R22_Kurssityo
             this.tab_laskutus.TabIndex = 2;
             this.tab_laskutus.Text = "Laskutus";
             this.tab_laskutus.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(59, 67);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Varausksen numero";
+            // 
+            // btnHaeVaraus
+            // 
+            this.btnHaeVaraus.Location = new System.Drawing.Point(62, 127);
+            this.btnHaeVaraus.Name = "btnHaeVaraus";
+            this.btnHaeVaraus.Size = new System.Drawing.Size(75, 23);
+            this.btnHaeVaraus.TabIndex = 1;
+            this.btnHaeVaraus.Text = "Hae varaus";
+            this.btnHaeVaraus.UseVisualStyleBackColor = true;
+            this.btnHaeVaraus.Click += new System.EventHandler(this.btnHaeVaraus_Click);
+            // 
+            // textVarausNumero
+            // 
+            this.textVarausNumero.Location = new System.Drawing.Point(164, 130);
+            this.textVarausNumero.Name = "textVarausNumero";
+            this.textVarausNumero.Size = new System.Drawing.Size(100, 20);
+            this.textVarausNumero.TabIndex = 0;
             // 
             // tab_varaus
             // 
@@ -877,32 +913,6 @@ namespace R22_Kurssityo
             // postiTableAdapter
             // 
             this.postiTableAdapter.ClearBeforeFill = true;
-            // 
-            // textVarausNumero
-            // 
-            this.textVarausNumero.Location = new System.Drawing.Point(164, 130);
-            this.textVarausNumero.Name = "textVarausNumero";
-            this.textVarausNumero.Size = new System.Drawing.Size(100, 20);
-            this.textVarausNumero.TabIndex = 0;
-            // 
-            // btnHaeVaraus
-            // 
-            this.btnHaeVaraus.Location = new System.Drawing.Point(62, 127);
-            this.btnHaeVaraus.Name = "btnHaeVaraus";
-            this.btnHaeVaraus.Size = new System.Drawing.Size(75, 23);
-            this.btnHaeVaraus.TabIndex = 1;
-            this.btnHaeVaraus.Text = "Hae varaus";
-            this.btnHaeVaraus.UseVisualStyleBackColor = true;
-            this.btnHaeVaraus.Click += new System.EventHandler(this.btnHaeVaraus_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(59, 67);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(101, 13);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Varausksen numero";
             // 
             // Form1
             // 

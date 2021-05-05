@@ -29,6 +29,7 @@ namespace R22_Kurssityo
             //con = new MySqlConnection(connectionString);
             //con.Open();
 
+            this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
             // TODO: This line of code loads data into the 'dataSet1.posti' table. You can move, or remove it, as needed.
             this.postiTableAdapter.Fill(this.dataSet1.posti);
             // TODO: This line of code loads data into the 'dataSet1.palvelu' table. You can move, or remove it, as needed.
