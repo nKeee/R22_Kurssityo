@@ -64,6 +64,7 @@ namespace R22_Kurssityo
             this.tab_laskutus = new System.Windows.Forms.TabPage();
             this.tab_varaus = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVahvistaVaraus = new System.Windows.Forms.Button();
             this.btnLisaaVaraus = new System.Windows.Forms.Button();
             this.dtpVarattu = new System.Windows.Forms.DateTimePicker();
             this.lblVarattu = new System.Windows.Forms.Label();
@@ -87,19 +88,24 @@ namespace R22_Kurssityo
             this.varattuloppupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tab_uusivaraus = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbPostitoimip = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btn_tallenna_varaus = new System.Windows.Forms.Button();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbHaluttupalvelu = new System.Windows.Forms.ComboBox();
+            this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbPuhnro = new System.Windows.Forms.TextBox();
+            this.tbPostinro = new System.Windows.Forms.TextBox();
+            this.tbOsoite = new System.Windows.Forms.TextBox();
+            this.tbSposti = new System.Windows.Forms.TextBox();
+            this.tbSnimi = new System.Windows.Forms.TextBox();
+            this.tbEnimi = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -108,7 +114,11 @@ namespace R22_Kurssityo
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.varausTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.varausTableAdapter();
-            this.btnVahvistaVaraus = new System.Windows.Forms.Button();
+            this.varauksenpalvelutBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.varauksen_palvelutTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.varauksen_palvelutTableAdapter();
+            this.palveluTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.palveluTableAdapter();
+            this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -123,6 +133,9 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.dgVaraukset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
             this.tab_uusivaraus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // asiakasBindingSource
@@ -405,6 +418,15 @@ namespace R22_Kurssityo
             this.panel1.Size = new System.Drawing.Size(394, 351);
             this.panel1.TabIndex = 10;
             // 
+            // btnVahvistaVaraus
+            // 
+            this.btnVahvistaVaraus.Location = new System.Drawing.Point(247, 252);
+            this.btnVahvistaVaraus.Name = "btnVahvistaVaraus";
+            this.btnVahvistaVaraus.Size = new System.Drawing.Size(122, 78);
+            this.btnVahvistaVaraus.TabIndex = 15;
+            this.btnVahvistaVaraus.Text = "Vahvista varaus";
+            this.btnVahvistaVaraus.UseVisualStyleBackColor = true;
+            // 
             // btnLisaaVaraus
             // 
             this.btnLisaaVaraus.Location = new System.Drawing.Point(247, 171);
@@ -586,19 +608,23 @@ namespace R22_Kurssityo
             // 
             // tab_uusivaraus
             // 
-            this.tab_uusivaraus.Controls.Add(this.button2);
+            this.tab_uusivaraus.Controls.Add(this.label14);
+            this.tab_uusivaraus.Controls.Add(this.tbPostitoimip);
+            this.tab_uusivaraus.Controls.Add(this.comboBox1);
+            this.tab_uusivaraus.Controls.Add(this.label13);
+            this.tab_uusivaraus.Controls.Add(this.btn_tallenna_varaus);
             this.tab_uusivaraus.Controls.Add(this.monthCalendar2);
             this.tab_uusivaraus.Controls.Add(this.monthCalendar1);
-            this.tab_uusivaraus.Controls.Add(this.comboBox1);
+            this.tab_uusivaraus.Controls.Add(this.cbHaluttupalvelu);
             this.tab_uusivaraus.Controls.Add(this.label12);
             this.tab_uusivaraus.Controls.Add(this.label11);
             this.tab_uusivaraus.Controls.Add(this.label10);
-            this.tab_uusivaraus.Controls.Add(this.textBox8);
-            this.tab_uusivaraus.Controls.Add(this.textBox7);
-            this.tab_uusivaraus.Controls.Add(this.textBox6);
-            this.tab_uusivaraus.Controls.Add(this.textBox5);
-            this.tab_uusivaraus.Controls.Add(this.textBox4);
-            this.tab_uusivaraus.Controls.Add(this.textBox3);
+            this.tab_uusivaraus.Controls.Add(this.tbPuhnro);
+            this.tab_uusivaraus.Controls.Add(this.tbPostinro);
+            this.tab_uusivaraus.Controls.Add(this.tbOsoite);
+            this.tab_uusivaraus.Controls.Add(this.tbSposti);
+            this.tab_uusivaraus.Controls.Add(this.tbSnimi);
+            this.tab_uusivaraus.Controls.Add(this.tbEnimi);
             this.tab_uusivaraus.Controls.Add(this.label9);
             this.tab_uusivaraus.Controls.Add(this.label8);
             this.tab_uusivaraus.Controls.Add(this.label7);
@@ -613,14 +639,51 @@ namespace R22_Kurssityo
             this.tab_uusivaraus.Text = "Uusi varaus";
             this.tab_uusivaraus.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // label14
             // 
-            this.button2.Location = new System.Drawing.Point(125, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(412, 135);
-            this.button2.TabIndex = 19;
-            this.button2.Text = ":D TALLENNA :D";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(19, 187);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Postitoimipaikka";
+            // 
+            // tbPostitoimip
+            // 
+            this.tbPostitoimip.Location = new System.Drawing.Point(108, 184);
+            this.tbPostitoimip.Name = "tbPostitoimip";
+            this.tbPostitoimip.Size = new System.Drawing.Size(121, 20);
+            this.tbPostitoimip.TabIndex = 22;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.mokkiBindingSource;
+            this.comboBox1.DisplayMember = "mokkinimi";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(103, 270);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 21;
+            this.comboBox1.ValueMember = "mokkinimi";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 273);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 13);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Haluttu mökki";
+            // 
+            // btn_tallenna_varaus
+            // 
+            this.btn_tallenna_varaus.Location = new System.Drawing.Point(246, 341);
+            this.btn_tallenna_varaus.Name = "btn_tallenna_varaus";
+            this.btn_tallenna_varaus.Size = new System.Drawing.Size(412, 135);
+            this.btn_tallenna_varaus.TabIndex = 19;
+            this.btn_tallenna_varaus.Text = "TALLENNA VARAUS";
+            this.btn_tallenna_varaus.UseVisualStyleBackColor = true;
+            this.btn_tallenna_varaus.Click += new System.EventHandler(this.btn_tallenna_varaus_Click);
             // 
             // monthCalendar2
             // 
@@ -634,18 +697,26 @@ namespace R22_Kurssityo
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 17;
             // 
-            // comboBox1
+            // cbHaluttupalvelu
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 192);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 16;
+            this.cbHaluttupalvelu.DataSource = this.palveluBindingSource;
+            this.cbHaluttupalvelu.DisplayMember = "nimi";
+            this.cbHaluttupalvelu.FormattingEnabled = true;
+            this.cbHaluttupalvelu.Location = new System.Drawing.Point(103, 246);
+            this.cbHaluttupalvelu.Name = "cbHaluttupalvelu";
+            this.cbHaluttupalvelu.Size = new System.Drawing.Size(121, 21);
+            this.cbHaluttupalvelu.TabIndex = 16;
+            this.cbHaluttupalvelu.ValueMember = "nimi";
+            // 
+            // palveluBindingSource
+            // 
+            this.palveluBindingSource.DataMember = "palvelu";
+            this.palveluBindingSource.DataSource = this.dataSet1BindingSource;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 200);
+            this.label12.Location = new System.Drawing.Point(19, 249);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 13);
             this.label12.TabIndex = 15;
@@ -669,47 +740,47 @@ namespace R22_Kurssityo
             this.label10.TabIndex = 13;
             this.label10.Text = "Varaus alku";
             // 
-            // textBox8
+            // tbPuhnro
             // 
-            this.textBox8.Location = new System.Drawing.Point(103, 158);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 20);
-            this.textBox8.TabIndex = 12;
+            this.tbPuhnro.Location = new System.Drawing.Point(108, 132);
+            this.tbPuhnro.Name = "tbPuhnro";
+            this.tbPuhnro.Size = new System.Drawing.Size(121, 20);
+            this.tbPuhnro.TabIndex = 12;
             // 
-            // textBox7
+            // tbPostinro
             // 
-            this.textBox7.Location = new System.Drawing.Point(103, 132);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 20);
-            this.textBox7.TabIndex = 11;
+            this.tbPostinro.Location = new System.Drawing.Point(108, 158);
+            this.tbPostinro.Name = "tbPostinro";
+            this.tbPostinro.Size = new System.Drawing.Size(121, 20);
+            this.tbPostinro.TabIndex = 11;
             // 
-            // textBox6
+            // tbOsoite
             // 
-            this.textBox6.Location = new System.Drawing.Point(103, 106);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 20);
-            this.textBox6.TabIndex = 10;
+            this.tbOsoite.Location = new System.Drawing.Point(108, 106);
+            this.tbOsoite.Name = "tbOsoite";
+            this.tbOsoite.Size = new System.Drawing.Size(121, 20);
+            this.tbOsoite.TabIndex = 10;
             // 
-            // textBox5
+            // tbSposti
             // 
-            this.textBox5.Location = new System.Drawing.Point(103, 80);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 20);
-            this.textBox5.TabIndex = 9;
+            this.tbSposti.Location = new System.Drawing.Point(108, 80);
+            this.tbSposti.Name = "tbSposti";
+            this.tbSposti.Size = new System.Drawing.Size(121, 20);
+            this.tbSposti.TabIndex = 9;
             // 
-            // textBox4
+            // tbSnimi
             // 
-            this.textBox4.Location = new System.Drawing.Point(103, 54);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 8;
+            this.tbSnimi.Location = new System.Drawing.Point(108, 54);
+            this.tbSnimi.Name = "tbSnimi";
+            this.tbSnimi.Size = new System.Drawing.Size(121, 20);
+            this.tbSnimi.TabIndex = 8;
             // 
-            // textBox3
+            // tbEnimi
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 28);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 7;
+            this.tbEnimi.Location = new System.Drawing.Point(108, 28);
+            this.tbEnimi.Name = "tbEnimi";
+            this.tbEnimi.Size = new System.Drawing.Size(121, 20);
+            this.tbEnimi.TabIndex = 7;
             // 
             // label9
             // 
@@ -723,7 +794,7 @@ namespace R22_Kurssityo
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 165);
+            this.label8.Location = new System.Drawing.Point(19, 139);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 5;
@@ -732,11 +803,11 @@ namespace R22_Kurssityo
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 139);
+            this.label7.Location = new System.Drawing.Point(19, 165);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 4;
-            this.label7.Text = "Postinro";
+            this.label7.Text = "Postinumero";
             // 
             // label6
             // 
@@ -778,14 +849,27 @@ namespace R22_Kurssityo
             // 
             this.varausTableAdapter.ClearBeforeFill = true;
             // 
-            // btnVahvistaVaraus
+            // varauksenpalvelutBindingSource
             // 
-            this.btnVahvistaVaraus.Location = new System.Drawing.Point(247, 252);
-            this.btnVahvistaVaraus.Name = "btnVahvistaVaraus";
-            this.btnVahvistaVaraus.Size = new System.Drawing.Size(122, 78);
-            this.btnVahvistaVaraus.TabIndex = 15;
-            this.btnVahvistaVaraus.Text = "Vahvista varaus";
-            this.btnVahvistaVaraus.UseVisualStyleBackColor = true;
+            this.varauksenpalvelutBindingSource.DataMember = "varauksen_palvelut";
+            this.varauksenpalvelutBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // varauksen_palvelutTableAdapter
+            // 
+            this.varauksen_palvelutTableAdapter.ClearBeforeFill = true;
+            // 
+            // palveluTableAdapter
+            // 
+            this.palveluTableAdapter.ClearBeforeFill = true;
+            // 
+            // postiBindingSource
+            // 
+            this.postiBindingSource.DataMember = "posti";
+            this.postiBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // postiTableAdapter
+            // 
+            this.postiTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -814,6 +898,9 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
             this.tab_uusivaraus.ResumeLayout(false);
             this.tab_uusivaraus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -863,19 +950,19 @@ namespace R22_Kurssityo
         private System.Windows.Forms.DataGridViewTextBoxColumn varattualkupvmDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varattuloppupvmDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tab_uusivaraus;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_tallenna_varaus;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbHaluttupalvelu;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbPuhnro;
+        private System.Windows.Forms.TextBox tbPostinro;
+        private System.Windows.Forms.TextBox tbOsoite;
+        private System.Windows.Forms.TextBox tbSposti;
+        private System.Windows.Forms.TextBox tbSnimi;
+        private System.Windows.Forms.TextBox tbEnimi;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -898,6 +985,16 @@ namespace R22_Kurssityo
         private System.Windows.Forms.Label lblVarattu;
         private System.Windows.Forms.Button btnLisaaVaraus;
         private System.Windows.Forms.Button btnVahvistaVaraus;
+        private System.Windows.Forms.BindingSource varauksenpalvelutBindingSource;
+        private DataSet1TableAdapters.varauksen_palvelutTableAdapter varauksen_palvelutTableAdapter;
+        private System.Windows.Forms.BindingSource palveluBindingSource;
+        private DataSet1TableAdapters.palveluTableAdapter palveluTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tbPostitoimip;
+        private System.Windows.Forms.BindingSource postiBindingSource;
+        private DataSet1TableAdapters.postiTableAdapter postiTableAdapter;
     }
 }
 
