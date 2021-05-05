@@ -50,7 +50,7 @@ namespace R22_Kurssityo
             //Ilman tätä järjestystä tulee erroria.
             asiakasTableAdapter.Update(this.dataSet1);
             asiakasTableAdapter.Insert(tbPostinro.Text, tbEnimi.Text, tbSnimi.Text, tbOsoite.Text, tbSposti.Text, tbPuhnro.Text);
-
+            this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
         }
 
         private void btnHaeVaraus_Click(object sender, EventArgs e)
@@ -75,8 +75,14 @@ namespace R22_Kurssityo
         {
             Validate();
             mokkiBindingSource.EndEdit();
+            postiBindingSource.EndEdit();
+            postiTableAdapter.Update(this.dataSet1);
+            postiTableAdapter.Insert(tbMokkipostinro.Text, tbMokkipostitoimipaik.Text);
+            //Lähetetään eka postitableen tiedot, koska mökkitablessa käytetään foreign keynä postinro.
+            //Ilman tätä järjestystä tulee erroria.
             mokkiTableAdapter.Update(this.dataSet1);
             mokkiTableAdapter.Insert(cbToimalue.SelectedIndex, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
+            this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
         }
 
         private void btnUusitoimalue_Click(object sender, EventArgs e)
@@ -85,6 +91,13 @@ namespace R22_Kurssityo
             toimintaalueBindingSource.EndEdit();
             toimintaalueTableAdapter.Update(this.dataSet1);
             toimintaalueTableAdapter.Insert(tbToimintaalue.Text);
+            this.toimintaalueTableAdapter.Fill(this.dataSet1.toimintaalue);
+        }
+
+        private void btnPoistaTA_Click(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.RemoveAt(dataGridView4.CurrentRow.Index);
+            this.toimintaalueTableAdapter.Update(this.dataSet1.toimintaalue);
         }
     }
 }

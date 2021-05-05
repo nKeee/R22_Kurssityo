@@ -37,6 +37,27 @@ namespace R22_Kurssityo
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mokkiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.mokkiTableAdapter();
             this.tab_mokit = new System.Windows.Forms.TabPage();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.toimintaalueidDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nimiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnUusitoimalue = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tbToimintaalue = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbMokkivarustelu = new System.Windows.Forms.TextBox();
+            this.tbMokkihenkimaara = new System.Windows.Forms.TextBox();
+            this.tbMokkikuvaus = new System.Windows.Forms.TextBox();
+            this.tbMokkiosoite = new System.Windows.Forms.TextBox();
+            this.cbToimalue = new System.Windows.Forms.ComboBox();
+            this.tbMokkipostinro = new System.Windows.Forms.TextBox();
+            this.tbMokkinimi = new System.Windows.Forms.TextBox();
             this.btn_uusimokki = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.mokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,15 +114,7 @@ namespace R22_Kurssityo
             this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tab_palvelut = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
-            this.btn_lisaapalvelu = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.palveluidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toimintaalueidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tyyppiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kuvausDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hintaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLisaapalvelu = new System.Windows.Forms.Button();
             this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tab_uusivaraus = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
@@ -134,33 +147,42 @@ namespace R22_Kurssityo
             this.palveluTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.palveluTableAdapter();
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
-            this.tbMokkinimi = new System.Windows.Forms.TextBox();
-            this.tbMokkipostinro = new System.Windows.Forms.TextBox();
-            this.cbToimalue = new System.Windows.Forms.ComboBox();
-            this.tbMokkiosoite = new System.Windows.Forms.TextBox();
-            this.tbMokkikuvaus = new System.Windows.Forms.TextBox();
-            this.tbMokkihenkimaara = new System.Windows.Forms.TextBox();
-            this.tbMokkivarustelu = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tbToimintaalue = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.btnUusitoimalue = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.toimintaalueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toimintaalueTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.toimintaalueTableAdapter();
-            this.toimintaalueidDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nimiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUusitoimintaalue2 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbUusitoimintaalue2 = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.palveluidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toimintaalueidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tyyppiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kuvausDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hintaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cbToimialue2 = new System.Windows.Forms.ComboBox();
+            this.tbPalvelutyyppi = new System.Windows.Forms.TextBox();
+            this.tbPalvelutnimi = new System.Windows.Forms.TextBox();
+            this.tbPalvelukuvaus = new System.Windows.Forms.TextBox();
+            this.tbPalveluhinta = new System.Windows.Forms.TextBox();
+            this.tbPalvelualv = new System.Windows.Forms.TextBox();
+            this.btnPoistaTA = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tbMokkipostitoimipaik = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             this.tab_mokit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tab_asiakkaat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -171,13 +193,12 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.dgVaraukset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
             this.tab_palvelut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
             this.tab_uusivaraus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // asiakasBindingSource
@@ -210,6 +231,9 @@ namespace R22_Kurssityo
             // 
             // tab_mokit
             // 
+            this.tab_mokit.Controls.Add(this.tbMokkipostitoimipaik);
+            this.tab_mokit.Controls.Add(this.label31);
+            this.tab_mokit.Controls.Add(this.btnPoistaTA);
             this.tab_mokit.Controls.Add(this.dataGridView4);
             this.tab_mokit.Controls.Add(this.btnUusitoimalue);
             this.tab_mokit.Controls.Add(this.label24);
@@ -238,6 +262,183 @@ namespace R22_Kurssityo
             this.tab_mokit.Text = "Mökit";
             this.tab_mokit.UseVisualStyleBackColor = true;
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.toimintaalueidDataGridViewTextBoxColumn2,
+            this.nimiDataGridViewTextBoxColumn1});
+            this.dataGridView4.DataSource = this.toimintaalueBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(62, 226);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(267, 173);
+            this.dataGridView4.TabIndex = 25;
+            // 
+            // toimintaalueidDataGridViewTextBoxColumn2
+            // 
+            this.toimintaalueidDataGridViewTextBoxColumn2.DataPropertyName = "toimintaalue_id";
+            this.toimintaalueidDataGridViewTextBoxColumn2.HeaderText = "toimintaalue_id";
+            this.toimintaalueidDataGridViewTextBoxColumn2.Name = "toimintaalueidDataGridViewTextBoxColumn2";
+            this.toimintaalueidDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // nimiDataGridViewTextBoxColumn1
+            // 
+            this.nimiDataGridViewTextBoxColumn1.DataPropertyName = "nimi";
+            this.nimiDataGridViewTextBoxColumn1.HeaderText = "nimi";
+            this.nimiDataGridViewTextBoxColumn1.Name = "nimiDataGridViewTextBoxColumn1";
+            this.nimiDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // toimintaalueBindingSource
+            // 
+            this.toimintaalueBindingSource.DataMember = "toimintaalue";
+            this.toimintaalueBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // btnUusitoimalue
+            // 
+            this.btnUusitoimalue.Location = new System.Drawing.Point(142, 468);
+            this.btnUusitoimalue.Name = "btnUusitoimalue";
+            this.btnUusitoimalue.Size = new System.Drawing.Size(107, 23);
+            this.btnUusitoimalue.TabIndex = 24;
+            this.btnUusitoimalue.Text = "Uusi toiminta-alue";
+            this.btnUusitoimalue.UseVisualStyleBackColor = true;
+            this.btnUusitoimalue.Click += new System.EventHandler(this.btnUusitoimalue_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(90, 428);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(93, 13);
+            this.label24.TabIndex = 23;
+            this.label24.Text = "Uusi toiminta-alue:";
+            // 
+            // tbToimintaalue
+            // 
+            this.tbToimintaalue.Location = new System.Drawing.Point(209, 425);
+            this.tbToimintaalue.Name = "tbToimintaalue";
+            this.tbToimintaalue.Size = new System.Drawing.Size(120, 20);
+            this.tbToimintaalue.TabIndex = 1;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(458, 425);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.TabIndex = 21;
+            this.label23.Text = "Varustelu";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(458, 399);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(72, 13);
+            this.label22.TabIndex = 20;
+            this.label22.Text = "Henkilömäärä";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(458, 373);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 13);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Kuvaus";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(458, 347);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(37, 13);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "Osoite";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(458, 242);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(57, 13);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Mökin nimi";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(458, 268);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 13);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "Postinumero";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(458, 320);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 13);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Toiminta-alue";
+            // 
+            // tbMokkivarustelu
+            // 
+            this.tbMokkivarustelu.Location = new System.Drawing.Point(559, 418);
+            this.tbMokkivarustelu.Name = "tbMokkivarustelu";
+            this.tbMokkivarustelu.Size = new System.Drawing.Size(121, 20);
+            this.tbMokkivarustelu.TabIndex = 9;
+            // 
+            // tbMokkihenkimaara
+            // 
+            this.tbMokkihenkimaara.Location = new System.Drawing.Point(559, 392);
+            this.tbMokkihenkimaara.Name = "tbMokkihenkimaara";
+            this.tbMokkihenkimaara.Size = new System.Drawing.Size(121, 20);
+            this.tbMokkihenkimaara.TabIndex = 8;
+            // 
+            // tbMokkikuvaus
+            // 
+            this.tbMokkikuvaus.Location = new System.Drawing.Point(559, 366);
+            this.tbMokkikuvaus.Name = "tbMokkikuvaus";
+            this.tbMokkikuvaus.Size = new System.Drawing.Size(121, 20);
+            this.tbMokkikuvaus.TabIndex = 7;
+            // 
+            // tbMokkiosoite
+            // 
+            this.tbMokkiosoite.Location = new System.Drawing.Point(559, 340);
+            this.tbMokkiosoite.Name = "tbMokkiosoite";
+            this.tbMokkiosoite.Size = new System.Drawing.Size(121, 20);
+            this.tbMokkiosoite.TabIndex = 6;
+            // 
+            // cbToimalue
+            // 
+            this.cbToimalue.DataSource = this.toimintaalueBindingSource;
+            this.cbToimalue.DisplayMember = "nimi";
+            this.cbToimalue.FormattingEnabled = true;
+            this.cbToimalue.Location = new System.Drawing.Point(559, 313);
+            this.cbToimalue.Name = "cbToimalue";
+            this.cbToimalue.Size = new System.Drawing.Size(121, 21);
+            this.cbToimalue.TabIndex = 5;
+            this.cbToimalue.ValueMember = "toimintaalue_id";
+            // 
+            // tbMokkipostinro
+            // 
+            this.tbMokkipostinro.Location = new System.Drawing.Point(559, 261);
+            this.tbMokkipostinro.Name = "tbMokkipostinro";
+            this.tbMokkipostinro.Size = new System.Drawing.Size(121, 20);
+            this.tbMokkipostinro.TabIndex = 3;
+            // 
+            // tbMokkinimi
+            // 
+            this.tbMokkinimi.Location = new System.Drawing.Point(559, 235);
+            this.tbMokkinimi.Name = "tbMokkinimi";
+            this.tbMokkinimi.Size = new System.Drawing.Size(121, 20);
+            this.tbMokkinimi.TabIndex = 2;
+            // 
             // btn_uusimokki
             // 
             this.btn_uusimokki.Location = new System.Drawing.Point(577, 457);
@@ -251,7 +452,6 @@ namespace R22_Kurssityo
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -276,48 +476,56 @@ namespace R22_Kurssityo
             this.mokkiidDataGridViewTextBoxColumn.DataPropertyName = "mokki_id";
             this.mokkiidDataGridViewTextBoxColumn.HeaderText = "mokki_id";
             this.mokkiidDataGridViewTextBoxColumn.Name = "mokkiidDataGridViewTextBoxColumn";
+            this.mokkiidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // toimintaalueidDataGridViewTextBoxColumn
             // 
             this.toimintaalueidDataGridViewTextBoxColumn.DataPropertyName = "toimintaalue_id";
             this.toimintaalueidDataGridViewTextBoxColumn.HeaderText = "toimintaalue_id";
             this.toimintaalueidDataGridViewTextBoxColumn.Name = "toimintaalueidDataGridViewTextBoxColumn";
+            this.toimintaalueidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // postinroDataGridViewTextBoxColumn1
             // 
             this.postinroDataGridViewTextBoxColumn1.DataPropertyName = "postinro";
             this.postinroDataGridViewTextBoxColumn1.HeaderText = "postinro";
             this.postinroDataGridViewTextBoxColumn1.Name = "postinroDataGridViewTextBoxColumn1";
+            this.postinroDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // mokkinimiDataGridViewTextBoxColumn
             // 
             this.mokkinimiDataGridViewTextBoxColumn.DataPropertyName = "mokkinimi";
             this.mokkinimiDataGridViewTextBoxColumn.HeaderText = "mokkinimi";
             this.mokkinimiDataGridViewTextBoxColumn.Name = "mokkinimiDataGridViewTextBoxColumn";
+            this.mokkinimiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // katuosoiteDataGridViewTextBoxColumn
             // 
             this.katuosoiteDataGridViewTextBoxColumn.DataPropertyName = "katuosoite";
             this.katuosoiteDataGridViewTextBoxColumn.HeaderText = "katuosoite";
             this.katuosoiteDataGridViewTextBoxColumn.Name = "katuosoiteDataGridViewTextBoxColumn";
+            this.katuosoiteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kuvausDataGridViewTextBoxColumn
             // 
             this.kuvausDataGridViewTextBoxColumn.DataPropertyName = "kuvaus";
             this.kuvausDataGridViewTextBoxColumn.HeaderText = "kuvaus";
             this.kuvausDataGridViewTextBoxColumn.Name = "kuvausDataGridViewTextBoxColumn";
+            this.kuvausDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // henkilomaaraDataGridViewTextBoxColumn
             // 
             this.henkilomaaraDataGridViewTextBoxColumn.DataPropertyName = "henkilomaara";
             this.henkilomaaraDataGridViewTextBoxColumn.HeaderText = "henkilomaara";
             this.henkilomaaraDataGridViewTextBoxColumn.Name = "henkilomaaraDataGridViewTextBoxColumn";
+            this.henkilomaaraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // varusteluDataGridViewTextBoxColumn
             // 
             this.varusteluDataGridViewTextBoxColumn.DataPropertyName = "varustelu";
             this.varusteluDataGridViewTextBoxColumn.HeaderText = "varustelu";
             this.varusteluDataGridViewTextBoxColumn.Name = "varusteluDataGridViewTextBoxColumn";
+            this.varusteluDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tab_asiakkaat
             // 
@@ -722,9 +930,24 @@ namespace R22_Kurssityo
             // 
             // tab_palvelut
             // 
-            this.tab_palvelut.Controls.Add(this.label16);
-            this.tab_palvelut.Controls.Add(this.btn_lisaapalvelu);
+            this.tab_palvelut.Controls.Add(this.tbPalvelualv);
+            this.tab_palvelut.Controls.Add(this.tbPalveluhinta);
+            this.tab_palvelut.Controls.Add(this.tbPalvelukuvaus);
+            this.tab_palvelut.Controls.Add(this.tbPalvelutnimi);
+            this.tab_palvelut.Controls.Add(this.tbPalvelutyyppi);
+            this.tab_palvelut.Controls.Add(this.cbToimialue2);
+            this.tab_palvelut.Controls.Add(this.label30);
+            this.tab_palvelut.Controls.Add(this.label29);
+            this.tab_palvelut.Controls.Add(this.label28);
+            this.tab_palvelut.Controls.Add(this.label27);
+            this.tab_palvelut.Controls.Add(this.label26);
             this.tab_palvelut.Controls.Add(this.dataGridView3);
+            this.tab_palvelut.Controls.Add(this.dataGridView5);
+            this.tab_palvelut.Controls.Add(this.btnUusitoimintaalue2);
+            this.tab_palvelut.Controls.Add(this.label25);
+            this.tab_palvelut.Controls.Add(this.tbUusitoimintaalue2);
+            this.tab_palvelut.Controls.Add(this.label16);
+            this.tab_palvelut.Controls.Add(this.btnLisaapalvelu);
             this.tab_palvelut.Location = new System.Drawing.Point(4, 22);
             this.tab_palvelut.Name = "tab_palvelut";
             this.tab_palvelut.Size = new System.Drawing.Size(760, 510);
@@ -735,96 +958,20 @@ namespace R22_Kurssityo
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(84, 361);
+            this.label16.Location = new System.Drawing.Point(457, 270);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.Size = new System.Drawing.Size(69, 13);
             this.label16.TabIndex = 3;
-            this.label16.Text = "label16";
+            this.label16.Text = "Palvelun nimi";
             // 
-            // btn_lisaapalvelu
+            // btnLisaapalvelu
             // 
-            this.btn_lisaapalvelu.Location = new System.Drawing.Point(270, 446);
-            this.btn_lisaapalvelu.Name = "btn_lisaapalvelu";
-            this.btn_lisaapalvelu.Size = new System.Drawing.Size(131, 41);
-            this.btn_lisaapalvelu.TabIndex = 2;
-            this.btn_lisaapalvelu.Text = "Lisää palvelu";
-            this.btn_lisaapalvelu.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToResizeColumns = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.palveluidDataGridViewTextBoxColumn,
-            this.toimintaalueidDataGridViewTextBoxColumn1,
-            this.nimiDataGridViewTextBoxColumn,
-            this.tyyppiDataGridViewTextBoxColumn,
-            this.kuvausDataGridViewTextBoxColumn1,
-            this.hintaDataGridViewTextBoxColumn,
-            this.alvDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.palveluBindingSource;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(760, 150);
-            this.dataGridView3.TabIndex = 1;
-            // 
-            // palveluidDataGridViewTextBoxColumn
-            // 
-            this.palveluidDataGridViewTextBoxColumn.DataPropertyName = "palvelu_id";
-            this.palveluidDataGridViewTextBoxColumn.HeaderText = "palvelu_id";
-            this.palveluidDataGridViewTextBoxColumn.Name = "palveluidDataGridViewTextBoxColumn";
-            this.palveluidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // toimintaalueidDataGridViewTextBoxColumn1
-            // 
-            this.toimintaalueidDataGridViewTextBoxColumn1.DataPropertyName = "toimintaalue_id";
-            this.toimintaalueidDataGridViewTextBoxColumn1.HeaderText = "toimintaalue_id";
-            this.toimintaalueidDataGridViewTextBoxColumn1.Name = "toimintaalueidDataGridViewTextBoxColumn1";
-            this.toimintaalueidDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // nimiDataGridViewTextBoxColumn
-            // 
-            this.nimiDataGridViewTextBoxColumn.DataPropertyName = "nimi";
-            this.nimiDataGridViewTextBoxColumn.HeaderText = "nimi";
-            this.nimiDataGridViewTextBoxColumn.Name = "nimiDataGridViewTextBoxColumn";
-            this.nimiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tyyppiDataGridViewTextBoxColumn
-            // 
-            this.tyyppiDataGridViewTextBoxColumn.DataPropertyName = "tyyppi";
-            this.tyyppiDataGridViewTextBoxColumn.HeaderText = "tyyppi";
-            this.tyyppiDataGridViewTextBoxColumn.Name = "tyyppiDataGridViewTextBoxColumn";
-            this.tyyppiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kuvausDataGridViewTextBoxColumn1
-            // 
-            this.kuvausDataGridViewTextBoxColumn1.DataPropertyName = "kuvaus";
-            this.kuvausDataGridViewTextBoxColumn1.HeaderText = "kuvaus";
-            this.kuvausDataGridViewTextBoxColumn1.Name = "kuvausDataGridViewTextBoxColumn1";
-            this.kuvausDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // hintaDataGridViewTextBoxColumn
-            // 
-            this.hintaDataGridViewTextBoxColumn.DataPropertyName = "hinta";
-            this.hintaDataGridViewTextBoxColumn.HeaderText = "hinta";
-            this.hintaDataGridViewTextBoxColumn.Name = "hintaDataGridViewTextBoxColumn";
-            this.hintaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // alvDataGridViewTextBoxColumn
-            // 
-            this.alvDataGridViewTextBoxColumn.DataPropertyName = "alv";
-            this.alvDataGridViewTextBoxColumn.HeaderText = "alv";
-            this.alvDataGridViewTextBoxColumn.Name = "alvDataGridViewTextBoxColumn";
-            this.alvDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnLisaapalvelu.Location = new System.Drawing.Point(570, 446);
+            this.btnLisaapalvelu.Name = "btnLisaapalvelu";
+            this.btnLisaapalvelu.Size = new System.Drawing.Size(92, 22);
+            this.btnLisaapalvelu.TabIndex = 2;
+            this.btnLisaapalvelu.Text = "Lisää palvelu";
+            this.btnLisaapalvelu.UseVisualStyleBackColor = true;
             // 
             // palveluBindingSource
             // 
@@ -1091,186 +1238,247 @@ namespace R22_Kurssityo
             // 
             this.postiTableAdapter.ClearBeforeFill = true;
             // 
-            // tbMokkinimi
-            // 
-            this.tbMokkinimi.Location = new System.Drawing.Point(559, 314);
-            this.tbMokkinimi.Name = "tbMokkinimi";
-            this.tbMokkinimi.Size = new System.Drawing.Size(121, 20);
-            this.tbMokkinimi.TabIndex = 8;
-            // 
-            // tbMokkipostinro
-            // 
-            this.tbMokkipostinro.Location = new System.Drawing.Point(559, 288);
-            this.tbMokkipostinro.Name = "tbMokkipostinro";
-            this.tbMokkipostinro.Size = new System.Drawing.Size(121, 20);
-            this.tbMokkipostinro.TabIndex = 9;
-            // 
-            // cbToimalue
-            // 
-            this.cbToimalue.DataSource = this.toimintaalueBindingSource;
-            this.cbToimalue.DisplayMember = "nimi";
-            this.cbToimalue.FormattingEnabled = true;
-            this.cbToimalue.Location = new System.Drawing.Point(559, 261);
-            this.cbToimalue.Name = "cbToimalue";
-            this.cbToimalue.Size = new System.Drawing.Size(121, 21);
-            this.cbToimalue.TabIndex = 10;
-            this.cbToimalue.ValueMember = "toimintaalue_id";
-            // 
-            // tbMokkiosoite
-            // 
-            this.tbMokkiosoite.Location = new System.Drawing.Point(559, 340);
-            this.tbMokkiosoite.Name = "tbMokkiosoite";
-            this.tbMokkiosoite.Size = new System.Drawing.Size(121, 20);
-            this.tbMokkiosoite.TabIndex = 11;
-            // 
-            // tbMokkikuvaus
-            // 
-            this.tbMokkikuvaus.Location = new System.Drawing.Point(559, 366);
-            this.tbMokkikuvaus.Name = "tbMokkikuvaus";
-            this.tbMokkikuvaus.Size = new System.Drawing.Size(121, 20);
-            this.tbMokkikuvaus.TabIndex = 12;
-            // 
-            // tbMokkihenkimaara
-            // 
-            this.tbMokkihenkimaara.Location = new System.Drawing.Point(559, 392);
-            this.tbMokkihenkimaara.Name = "tbMokkihenkimaara";
-            this.tbMokkihenkimaara.Size = new System.Drawing.Size(121, 20);
-            this.tbMokkihenkimaara.TabIndex = 13;
-            // 
-            // tbMokkivarustelu
-            // 
-            this.tbMokkivarustelu.Location = new System.Drawing.Point(559, 418);
-            this.tbMokkivarustelu.Name = "tbMokkivarustelu";
-            this.tbMokkivarustelu.Size = new System.Drawing.Size(121, 20);
-            this.tbMokkivarustelu.TabIndex = 14;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(458, 268);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 13);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Toiminta-alue";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(458, 295);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 13);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Postinumero";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(458, 321);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(57, 13);
-            this.label19.TabIndex = 17;
-            this.label19.Text = "Mökin nimi";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(458, 347);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(37, 13);
-            this.label20.TabIndex = 18;
-            this.label20.Text = "Osoite";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(458, 373);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(43, 13);
-            this.label21.TabIndex = 19;
-            this.label21.Text = "Kuvaus";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(458, 399);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(72, 13);
-            this.label22.TabIndex = 20;
-            this.label22.Text = "Henkilömäärä";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(458, 425);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 13);
-            this.label23.TabIndex = 21;
-            this.label23.Text = "Varustelu";
-            // 
-            // tbToimintaalue
-            // 
-            this.tbToimintaalue.Location = new System.Drawing.Point(209, 425);
-            this.tbToimintaalue.Name = "tbToimintaalue";
-            this.tbToimintaalue.Size = new System.Drawing.Size(120, 20);
-            this.tbToimintaalue.TabIndex = 22;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(90, 428);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(93, 13);
-            this.label24.TabIndex = 23;
-            this.label24.Text = "Uusi toiminta-alue:";
-            // 
-            // btnUusitoimalue
-            // 
-            this.btnUusitoimalue.Location = new System.Drawing.Point(142, 468);
-            this.btnUusitoimalue.Name = "btnUusitoimalue";
-            this.btnUusitoimalue.Size = new System.Drawing.Size(107, 23);
-            this.btnUusitoimalue.TabIndex = 24;
-            this.btnUusitoimalue.Text = "Uusi toiminta-alue";
-            this.btnUusitoimalue.UseVisualStyleBackColor = true;
-            this.btnUusitoimalue.Click += new System.EventHandler(this.btnUusitoimalue_Click);
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.toimintaalueidDataGridViewTextBoxColumn2,
-            this.nimiDataGridViewTextBoxColumn1});
-            this.dataGridView4.DataSource = this.toimintaalueBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(62, 226);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(267, 173);
-            this.dataGridView4.TabIndex = 25;
-            // 
-            // toimintaalueBindingSource
-            // 
-            this.toimintaalueBindingSource.DataMember = "toimintaalue";
-            this.toimintaalueBindingSource.DataSource = this.dataSet1BindingSource;
-            // 
             // toimintaalueTableAdapter
             // 
             this.toimintaalueTableAdapter.ClearBeforeFill = true;
             // 
-            // toimintaalueidDataGridViewTextBoxColumn2
+            // dataGridView5
             // 
-            this.toimintaalueidDataGridViewTextBoxColumn2.DataPropertyName = "toimintaalue_id";
-            this.toimintaalueidDataGridViewTextBoxColumn2.HeaderText = "toimintaalue_id";
-            this.toimintaalueidDataGridViewTextBoxColumn2.Name = "toimintaalueidDataGridViewTextBoxColumn2";
-            this.toimintaalueidDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView5.DataSource = this.toimintaalueBindingSource;
+            this.dataGridView5.Location = new System.Drawing.Point(62, 226);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.Size = new System.Drawing.Size(267, 173);
+            this.dataGridView5.TabIndex = 29;
             // 
-            // nimiDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn1
             // 
-            this.nimiDataGridViewTextBoxColumn1.DataPropertyName = "nimi";
-            this.nimiDataGridViewTextBoxColumn1.HeaderText = "nimi";
-            this.nimiDataGridViewTextBoxColumn1.Name = "nimiDataGridViewTextBoxColumn1";
-            this.nimiDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "toimintaalue_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "toimintaalue_id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nimi";
+            this.dataGridViewTextBoxColumn2.HeaderText = "nimi";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // btnUusitoimintaalue2
+            // 
+            this.btnUusitoimintaalue2.Location = new System.Drawing.Point(142, 468);
+            this.btnUusitoimintaalue2.Name = "btnUusitoimintaalue2";
+            this.btnUusitoimintaalue2.Size = new System.Drawing.Size(107, 23);
+            this.btnUusitoimintaalue2.TabIndex = 28;
+            this.btnUusitoimintaalue2.Text = "Uusi toiminta-alue";
+            this.btnUusitoimintaalue2.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(90, 428);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(93, 13);
+            this.label25.TabIndex = 27;
+            this.label25.Text = "Uusi toiminta-alue:";
+            // 
+            // tbUusitoimintaalue2
+            // 
+            this.tbUusitoimintaalue2.Location = new System.Drawing.Point(209, 425);
+            this.tbUusitoimintaalue2.Name = "tbUusitoimintaalue2";
+            this.tbUusitoimintaalue2.Size = new System.Drawing.Size(120, 20);
+            this.tbUusitoimintaalue2.TabIndex = 26;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.palveluidDataGridViewTextBoxColumn,
+            this.toimintaalueidDataGridViewTextBoxColumn1,
+            this.nimiDataGridViewTextBoxColumn,
+            this.tyyppiDataGridViewTextBoxColumn,
+            this.kuvausDataGridViewTextBoxColumn1,
+            this.hintaDataGridViewTextBoxColumn,
+            this.alvDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.palveluBindingSource;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(760, 217);
+            this.dataGridView3.TabIndex = 30;
+            // 
+            // palveluidDataGridViewTextBoxColumn
+            // 
+            this.palveluidDataGridViewTextBoxColumn.DataPropertyName = "palvelu_id";
+            this.palveluidDataGridViewTextBoxColumn.HeaderText = "palvelu_id";
+            this.palveluidDataGridViewTextBoxColumn.Name = "palveluidDataGridViewTextBoxColumn";
+            this.palveluidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // toimintaalueidDataGridViewTextBoxColumn1
+            // 
+            this.toimintaalueidDataGridViewTextBoxColumn1.DataPropertyName = "toimintaalue_id";
+            this.toimintaalueidDataGridViewTextBoxColumn1.HeaderText = "toimintaalue_id";
+            this.toimintaalueidDataGridViewTextBoxColumn1.Name = "toimintaalueidDataGridViewTextBoxColumn1";
+            this.toimintaalueidDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nimiDataGridViewTextBoxColumn
+            // 
+            this.nimiDataGridViewTextBoxColumn.DataPropertyName = "nimi";
+            this.nimiDataGridViewTextBoxColumn.HeaderText = "nimi";
+            this.nimiDataGridViewTextBoxColumn.Name = "nimiDataGridViewTextBoxColumn";
+            this.nimiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tyyppiDataGridViewTextBoxColumn
+            // 
+            this.tyyppiDataGridViewTextBoxColumn.DataPropertyName = "tyyppi";
+            this.tyyppiDataGridViewTextBoxColumn.HeaderText = "tyyppi";
+            this.tyyppiDataGridViewTextBoxColumn.Name = "tyyppiDataGridViewTextBoxColumn";
+            this.tyyppiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kuvausDataGridViewTextBoxColumn1
+            // 
+            this.kuvausDataGridViewTextBoxColumn1.DataPropertyName = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn1.HeaderText = "kuvaus";
+            this.kuvausDataGridViewTextBoxColumn1.Name = "kuvausDataGridViewTextBoxColumn1";
+            this.kuvausDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hintaDataGridViewTextBoxColumn
+            // 
+            this.hintaDataGridViewTextBoxColumn.DataPropertyName = "hinta";
+            this.hintaDataGridViewTextBoxColumn.HeaderText = "hinta";
+            this.hintaDataGridViewTextBoxColumn.Name = "hintaDataGridViewTextBoxColumn";
+            this.hintaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // alvDataGridViewTextBoxColumn
+            // 
+            this.alvDataGridViewTextBoxColumn.DataPropertyName = "alv";
+            this.alvDataGridViewTextBoxColumn.HeaderText = "alv";
+            this.alvDataGridViewTextBoxColumn.Name = "alvDataGridViewTextBoxColumn";
+            this.alvDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(457, 323);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(78, 13);
+            this.label26.TabIndex = 31;
+            this.label26.Text = "Palvelun tyyppi";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(457, 349);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(43, 13);
+            this.label27.TabIndex = 32;
+            this.label27.Text = "Kuvaus";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(457, 375);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(32, 13);
+            this.label28.TabIndex = 33;
+            this.label28.Text = "Hinta";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(457, 401);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(22, 13);
+            this.label29.TabIndex = 34;
+            this.label29.Text = "Alv";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(457, 297);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(70, 13);
+            this.label30.TabIndex = 35;
+            this.label30.Text = "Toiminta-alue";
+            // 
+            // cbToimialue2
+            // 
+            this.cbToimialue2.FormattingEnabled = true;
+            this.cbToimialue2.Location = new System.Drawing.Point(556, 289);
+            this.cbToimialue2.Name = "cbToimialue2";
+            this.cbToimialue2.Size = new System.Drawing.Size(121, 21);
+            this.cbToimialue2.TabIndex = 36;
+            // 
+            // tbPalvelutyyppi
+            // 
+            this.tbPalvelutyyppi.Location = new System.Drawing.Point(556, 316);
+            this.tbPalvelutyyppi.Name = "tbPalvelutyyppi";
+            this.tbPalvelutyyppi.Size = new System.Drawing.Size(121, 20);
+            this.tbPalvelutyyppi.TabIndex = 37;
+            // 
+            // tbPalvelutnimi
+            // 
+            this.tbPalvelutnimi.Location = new System.Drawing.Point(556, 263);
+            this.tbPalvelutnimi.Name = "tbPalvelutnimi";
+            this.tbPalvelutnimi.Size = new System.Drawing.Size(121, 20);
+            this.tbPalvelutnimi.TabIndex = 38;
+            // 
+            // tbPalvelukuvaus
+            // 
+            this.tbPalvelukuvaus.Location = new System.Drawing.Point(556, 342);
+            this.tbPalvelukuvaus.Name = "tbPalvelukuvaus";
+            this.tbPalvelukuvaus.Size = new System.Drawing.Size(121, 20);
+            this.tbPalvelukuvaus.TabIndex = 39;
+            // 
+            // tbPalveluhinta
+            // 
+            this.tbPalveluhinta.Location = new System.Drawing.Point(556, 368);
+            this.tbPalveluhinta.Name = "tbPalveluhinta";
+            this.tbPalveluhinta.Size = new System.Drawing.Size(121, 20);
+            this.tbPalveluhinta.TabIndex = 40;
+            // 
+            // tbPalvelualv
+            // 
+            this.tbPalvelualv.Location = new System.Drawing.Point(556, 394);
+            this.tbPalvelualv.Name = "tbPalvelualv";
+            this.tbPalvelualv.Size = new System.Drawing.Size(121, 20);
+            this.tbPalvelualv.TabIndex = 41;
+            // 
+            // btnPoistaTA
+            // 
+            this.btnPoistaTA.Location = new System.Drawing.Point(335, 226);
+            this.btnPoistaTA.Name = "btnPoistaTA";
+            this.btnPoistaTA.Size = new System.Drawing.Size(75, 36);
+            this.btnPoistaTA.TabIndex = 26;
+            this.btnPoistaTA.Text = "Poista toiminta-alue";
+            this.btnPoistaTA.UseVisualStyleBackColor = true;
+            this.btnPoistaTA.Click += new System.EventHandler(this.btnPoistaTA_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(458, 294);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(83, 13);
+            this.label31.TabIndex = 27;
+            this.label31.Text = "Postitoimipaikka";
+            // 
+            // tbMokkipostitoimipaik
+            // 
+            this.tbMokkipostitoimipaik.Location = new System.Drawing.Point(559, 287);
+            this.tbMokkipostitoimipaik.Name = "tbMokkipostitoimipaik";
+            this.tbMokkipostitoimipaik.Size = new System.Drawing.Size(121, 20);
+            this.tbMokkipostitoimipaik.TabIndex = 4;
             // 
             // Form1
             // 
@@ -1288,6 +1496,8 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             this.tab_mokit.ResumeLayout(false);
             this.tab_mokit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tab_asiakkaat.ResumeLayout(false);
             this.tab_asiakkaat.PerformLayout();
@@ -1302,14 +1512,13 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
             this.tab_palvelut.ResumeLayout(false);
             this.tab_palvelut.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
             this.tab_uusivaraus.ResumeLayout(false);
             this.tab_uusivaraus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1408,17 +1617,9 @@ namespace R22_Kurssityo
         private System.Windows.Forms.Button btnHaeVaraus;
         private System.Windows.Forms.TextBox textVarausNumero;
         private System.Windows.Forms.TabPage tab_palvelut;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn palveluidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toimintaalueidDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tyyppiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hintaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alvDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_uusimokki;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btn_lisaapalvelu;
+        private System.Windows.Forms.Button btnLisaapalvelu;
         private System.Windows.Forms.TextBox tbMokkipostinro;
         private System.Windows.Forms.TextBox tbMokkinimi;
         private System.Windows.Forms.Label label23;
@@ -1441,6 +1642,34 @@ namespace R22_Kurssityo
         private DataSet1TableAdapters.toimintaalueTableAdapter toimintaalueTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn toimintaalueidDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button btnUusitoimintaalue2;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox tbUusitoimintaalue2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn palveluidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toimintaalueidDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tyyppiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kuvausDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hintaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alvDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox tbPalvelualv;
+        private System.Windows.Forms.TextBox tbPalveluhinta;
+        private System.Windows.Forms.TextBox tbPalvelukuvaus;
+        private System.Windows.Forms.TextBox tbPalvelutnimi;
+        private System.Windows.Forms.TextBox tbPalvelutyyppi;
+        private System.Windows.Forms.ComboBox cbToimialue2;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnPoistaTA;
+        private System.Windows.Forms.TextBox tbMokkipostitoimipaik;
+        private System.Windows.Forms.Label label31;
     }
 }
 
