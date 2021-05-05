@@ -119,6 +119,9 @@ namespace R22_Kurssityo
             this.palveluTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.palveluTableAdapter();
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
+            this.textVarausNumero = new System.Windows.Forms.TextBox();
+            this.btnHaeVaraus = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -128,6 +131,7 @@ namespace R22_Kurssityo
             this.tab_asiakkaat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tab_laskutus.SuspendLayout();
             this.tab_varaus.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVaraukset)).BeginInit();
@@ -379,6 +383,9 @@ namespace R22_Kurssityo
             // 
             // tab_laskutus
             // 
+            this.tab_laskutus.Controls.Add(this.label15);
+            this.tab_laskutus.Controls.Add(this.btnHaeVaraus);
+            this.tab_laskutus.Controls.Add(this.textVarausNumero);
             this.tab_laskutus.Location = new System.Drawing.Point(4, 22);
             this.tab_laskutus.Name = "tab_laskutus";
             this.tab_laskutus.Size = new System.Drawing.Size(760, 510);
@@ -871,6 +878,32 @@ namespace R22_Kurssityo
             // 
             this.postiTableAdapter.ClearBeforeFill = true;
             // 
+            // textVarausNumero
+            // 
+            this.textVarausNumero.Location = new System.Drawing.Point(164, 130);
+            this.textVarausNumero.Name = "textVarausNumero";
+            this.textVarausNumero.Size = new System.Drawing.Size(100, 20);
+            this.textVarausNumero.TabIndex = 0;
+            // 
+            // btnHaeVaraus
+            // 
+            this.btnHaeVaraus.Location = new System.Drawing.Point(62, 127);
+            this.btnHaeVaraus.Name = "btnHaeVaraus";
+            this.btnHaeVaraus.Size = new System.Drawing.Size(75, 23);
+            this.btnHaeVaraus.TabIndex = 1;
+            this.btnHaeVaraus.Text = "Hae varaus";
+            this.btnHaeVaraus.UseVisualStyleBackColor = true;
+            this.btnHaeVaraus.Click += new System.EventHandler(this.btnHaeVaraus_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(59, 67);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Varausksen numero";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -891,6 +924,8 @@ namespace R22_Kurssityo
             this.tab_asiakkaat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tab_laskutus.ResumeLayout(false);
+            this.tab_laskutus.PerformLayout();
             this.tab_varaus.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -995,6 +1030,9 @@ namespace R22_Kurssityo
         private System.Windows.Forms.TextBox tbPostitoimip;
         private System.Windows.Forms.BindingSource postiBindingSource;
         private DataSet1TableAdapters.postiTableAdapter postiTableAdapter;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnHaeVaraus;
+        private System.Windows.Forms.TextBox textVarausNumero;
     }
 }
 
