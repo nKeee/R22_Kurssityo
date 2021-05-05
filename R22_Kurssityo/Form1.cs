@@ -81,7 +81,7 @@ namespace R22_Kurssityo
             //Lähetetään eka postitableen tiedot, koska mökkitablessa käytetään foreign keynä postinro.
             //Ilman tätä järjestystä tulee erroria.
             mokkiTableAdapter.Update(this.dataSet1);
-            mokkiTableAdapter.Insert(cbToimalue.SelectedIndex, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
+            mokkiTableAdapter.Insert((long)cbToimalue.SelectedValue, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
             this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
         }
 
