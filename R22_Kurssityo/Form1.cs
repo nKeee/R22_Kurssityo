@@ -99,5 +99,29 @@ namespace R22_Kurssityo
             dataGridView4.Rows.RemoveAt(dataGridView4.CurrentRow.Index);
             this.toimintaalueTableAdapter.Update(this.dataSet1.toimintaalue);
         }
+
+        private void btnLisaapalvelu_Click(object sender, EventArgs e)
+        {
+            Validate();
+            palveluBindingSource.EndEdit();
+            palveluTableAdapter.Update(this.dataSet1);
+            //palveluTableAdapter.Insert();
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbMokkihenkimaara_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
