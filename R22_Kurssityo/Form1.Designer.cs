@@ -89,7 +89,6 @@ namespace R22_Kurssityo
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVahvistaVaraus = new System.Windows.Forms.Button();
             this.btnPoistaVaraus = new System.Windows.Forms.Button();
-            this.btnMuokkaaVaraus = new System.Windows.Forms.Button();
             this.dgVaraukset = new System.Windows.Forms.DataGridView();
             this.varausidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asiakasidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,6 +169,7 @@ namespace R22_Kurssityo
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
             this.toimintaalueTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.toimintaalueTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -252,7 +252,7 @@ namespace R22_Kurssityo
             this.tab_mokit.Location = new System.Drawing.Point(4, 22);
             this.tab_mokit.Name = "tab_mokit";
             this.tab_mokit.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_mokit.Size = new System.Drawing.Size(760, 510);
+            this.tab_mokit.Size = new System.Drawing.Size(763, 510);
             this.tab_mokit.TabIndex = 1;
             this.tab_mokit.Text = "Mökit";
             this.tab_mokit.UseVisualStyleBackColor = true;
@@ -490,7 +490,7 @@ namespace R22_Kurssityo
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(754, 217);
+            this.dataGridView2.Size = new System.Drawing.Size(757, 217);
             this.dataGridView2.TabIndex = 6;
             // 
             // mokkiidDataGridViewTextBoxColumn
@@ -643,7 +643,7 @@ namespace R22_Kurssityo
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(768, 536);
+            this.tabControl1.Size = new System.Drawing.Size(771, 536);
             this.tabControl1.TabIndex = 6;
             // 
             // tab_laskutus
@@ -686,11 +686,12 @@ namespace R22_Kurssityo
             // 
             // tab_varaus
             // 
+            this.tab_varaus.Controls.Add(this.label1);
             this.tab_varaus.Controls.Add(this.panel1);
             this.tab_varaus.Controls.Add(this.dgVaraukset);
             this.tab_varaus.Location = new System.Drawing.Point(4, 22);
             this.tab_varaus.Name = "tab_varaus";
-            this.tab_varaus.Size = new System.Drawing.Size(760, 510);
+            this.tab_varaus.Size = new System.Drawing.Size(763, 510);
             this.tab_varaus.TabIndex = 3;
             this.tab_varaus.Text = "Varaushallinta";
             this.tab_varaus.UseVisualStyleBackColor = true;
@@ -699,17 +700,16 @@ namespace R22_Kurssityo
             // 
             this.panel1.Controls.Add(this.btnVahvistaVaraus);
             this.panel1.Controls.Add(this.btnPoistaVaraus);
-            this.panel1.Controls.Add(this.btnMuokkaaVaraus);
-            this.panel1.Location = new System.Drawing.Point(18, 156);
+            this.panel1.Location = new System.Drawing.Point(258, 297);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 354);
+            this.panel1.Size = new System.Drawing.Size(215, 184);
             this.panel1.TabIndex = 10;
             // 
             // btnVahvistaVaraus
             // 
-            this.btnVahvistaVaraus.Location = new System.Drawing.Point(0, 70);
+            this.btnVahvistaVaraus.Location = new System.Drawing.Point(19, 12);
             this.btnVahvistaVaraus.Name = "btnVahvistaVaraus";
-            this.btnVahvistaVaraus.Size = new System.Drawing.Size(438, 75);
+            this.btnVahvistaVaraus.Size = new System.Drawing.Size(177, 75);
             this.btnVahvistaVaraus.TabIndex = 16;
             this.btnVahvistaVaraus.Text = "Vahvista varaus";
             this.btnVahvistaVaraus.UseVisualStyleBackColor = true;
@@ -717,22 +717,13 @@ namespace R22_Kurssityo
             // 
             // btnPoistaVaraus
             // 
-            this.btnPoistaVaraus.Location = new System.Drawing.Point(0, 232);
+            this.btnPoistaVaraus.Location = new System.Drawing.Point(19, 93);
             this.btnPoistaVaraus.Name = "btnPoistaVaraus";
-            this.btnPoistaVaraus.Size = new System.Drawing.Size(438, 78);
+            this.btnPoistaVaraus.Size = new System.Drawing.Size(177, 78);
             this.btnPoistaVaraus.TabIndex = 15;
             this.btnPoistaVaraus.Text = "Poista varaus";
             this.btnPoistaVaraus.UseVisualStyleBackColor = true;
             this.btnPoistaVaraus.Click += new System.EventHandler(this.btnPoistaVaraus_Click);
-            // 
-            // btnMuokkaaVaraus
-            // 
-            this.btnMuokkaaVaraus.Location = new System.Drawing.Point(3, 151);
-            this.btnMuokkaaVaraus.Name = "btnMuokkaaVaraus";
-            this.btnMuokkaaVaraus.Size = new System.Drawing.Size(435, 75);
-            this.btnMuokkaaVaraus.TabIndex = 14;
-            this.btnMuokkaaVaraus.Text = "Muokkaa varausta";
-            this.btnMuokkaaVaraus.UseVisualStyleBackColor = true;
             // 
             // dgVaraukset
             // 
@@ -757,7 +748,7 @@ namespace R22_Kurssityo
             this.dgVaraukset.MultiSelect = false;
             this.dgVaraukset.Name = "dgVaraukset";
             this.dgVaraukset.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVaraukset.Size = new System.Drawing.Size(760, 150);
+            this.dgVaraukset.Size = new System.Drawing.Size(763, 257);
             this.dgVaraukset.TabIndex = 0;
             // 
             // varausidDataGridViewTextBoxColumn
@@ -831,7 +822,7 @@ namespace R22_Kurssityo
             this.tab_palvelut.Controls.Add(this.btnLisaapalvelu);
             this.tab_palvelut.Location = new System.Drawing.Point(4, 22);
             this.tab_palvelut.Name = "tab_palvelut";
-            this.tab_palvelut.Size = new System.Drawing.Size(760, 510);
+            this.tab_palvelut.Size = new System.Drawing.Size(763, 510);
             this.tab_palvelut.TabIndex = 5;
             this.tab_palvelut.Text = "Palvelut";
             this.tab_palvelut.UseVisualStyleBackColor = true;
@@ -959,7 +950,7 @@ namespace R22_Kurssityo
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(760, 217);
+            this.dataGridView3.Size = new System.Drawing.Size(763, 217);
             this.dataGridView3.TabIndex = 30;
             // 
             // palveluidDataGridViewTextBoxColumn
@@ -1118,7 +1109,7 @@ namespace R22_Kurssityo
             this.tab_uusivaraus.Controls.Add(this.tbPuhnro);
             this.tab_uusivaraus.Location = new System.Drawing.Point(4, 22);
             this.tab_uusivaraus.Name = "tab_uusivaraus";
-            this.tab_uusivaraus.Size = new System.Drawing.Size(760, 510);
+            this.tab_uusivaraus.Size = new System.Drawing.Size(763, 510);
             this.tab_uusivaraus.TabIndex = 4;
             this.tab_uusivaraus.Text = "Uusi varaus";
             this.tab_uusivaraus.UseVisualStyleBackColor = true;
@@ -1142,7 +1133,7 @@ namespace R22_Kurssityo
             this.dgvUusivaraus_asiakas.Location = new System.Drawing.Point(0, 0);
             this.dgvUusivaraus_asiakas.Name = "dgvUusivaraus_asiakas";
             this.dgvUusivaraus_asiakas.ReadOnly = true;
-            this.dgvUusivaraus_asiakas.Size = new System.Drawing.Size(760, 207);
+            this.dgvUusivaraus_asiakas.Size = new System.Drawing.Size(763, 207);
             this.dgvUusivaraus_asiakas.TabIndex = 26;
             // 
             // dataGridViewTextBoxColumn3
@@ -1427,11 +1418,21 @@ namespace R22_Kurssityo
             // 
             this.toimintaalueTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(321, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 24);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Varaukset";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 831);
+            this.ClientSize = new System.Drawing.Size(771, 831);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1452,6 +1453,7 @@ namespace R22_Kurssityo
             this.tab_laskutus.ResumeLayout(false);
             this.tab_laskutus.PerformLayout();
             this.tab_varaus.ResumeLayout(false);
+            this.tab_varaus.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgVaraukset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
@@ -1528,7 +1530,6 @@ namespace R22_Kurssityo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnMuokkaaVaraus;
         private System.Windows.Forms.Button btnPoistaVaraus;
         private System.Windows.Forms.BindingSource varauksenpalvelutBindingSource;
         private DataSet1TableAdapters.varauksen_palvelutTableAdapter varauksen_palvelutTableAdapter;
@@ -1610,6 +1611,7 @@ namespace R22_Kurssityo
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
