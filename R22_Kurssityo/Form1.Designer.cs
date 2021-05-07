@@ -131,37 +131,6 @@ namespace R22_Kurssityo
             this.label16 = new System.Windows.Forms.Label();
             this.btnLisaapalvelu = new System.Windows.Forms.Button();
             this.tab_uusivaraus = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.tbPostitoimip = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btn_tallenna_varaus = new System.Windows.Forms.Button();
-            this.cbHaluttupalvelu = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tbPuhnro = new System.Windows.Forms.TextBox();
-            this.tbPostinro = new System.Windows.Forms.TextBox();
-            this.tbOsoite = new System.Windows.Forms.TextBox();
-            this.tbSposti = new System.Windows.Forms.TextBox();
-            this.tbSnimi = new System.Windows.Forms.TextBox();
-            this.tbEnimi = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.varausTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.varausTableAdapter();
-            this.varauksenpalvelutBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.varauksen_palvelutTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.varauksen_palvelutTableAdapter();
-            this.palveluTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.palveluTableAdapter();
-            this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
-            this.toimintaalueTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.toimintaalueTableAdapter();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dgvUusivaraus_asiakas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,6 +139,37 @@ namespace R22_Kurssityo
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbEnimi = new System.Windows.Forms.TextBox();
+            this.btn_tallenna_varaus = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbPostitoimip = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbHaluttupalvelu = new System.Windows.Forms.ComboBox();
+            this.tbPostinro = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbOsoite = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbSposti = new System.Windows.Forms.TextBox();
+            this.tbSnimi = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbPuhnro = new System.Windows.Forms.TextBox();
+            this.varausTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.varausTableAdapter();
+            this.varauksenpalvelutBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.varauksen_palvelutTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.varauksen_palvelutTableAdapter();
+            this.palveluTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.palveluTableAdapter();
+            this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
+            this.toimintaalueTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.toimintaalueTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -191,9 +191,9 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tab_uusivaraus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUusivaraus_asiakas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUusivaraus_asiakas)).BeginInit();
             this.SuspendLayout();
             // 
             // asiakasBindingSource
@@ -713,6 +713,7 @@ namespace R22_Kurssityo
             this.btnVahvistaVaraus.TabIndex = 16;
             this.btnVahvistaVaraus.Text = "Vahvista varaus";
             this.btnVahvistaVaraus.UseVisualStyleBackColor = true;
+            this.btnVahvistaVaraus.Click += new System.EventHandler(this.btnVahvistaVaraus_Click);
             // 
             // btnPoistaVaraus
             // 
@@ -722,6 +723,7 @@ namespace R22_Kurssityo
             this.btnPoistaVaraus.TabIndex = 15;
             this.btnPoistaVaraus.Text = "Poista varaus";
             this.btnPoistaVaraus.UseVisualStyleBackColor = true;
+            this.btnPoistaVaraus.Click += new System.EventHandler(this.btnPoistaVaraus_Click);
             // 
             // btnMuokkaaVaraus
             // 
@@ -1121,239 +1123,6 @@ namespace R22_Kurssityo
             this.tab_uusivaraus.Text = "Uusi varaus";
             this.tab_uusivaraus.UseVisualStyleBackColor = true;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(23, 457);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 13);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "Postitoimipaikka";
-            // 
-            // tbPostitoimip
-            // 
-            this.tbPostitoimip.Location = new System.Drawing.Point(112, 454);
-            this.tbPostitoimip.Name = "tbPostitoimip";
-            this.tbPostitoimip.Size = new System.Drawing.Size(121, 20);
-            this.tbPostitoimip.TabIndex = 22;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.mokkiBindingSource;
-            this.comboBox1.DisplayMember = "mokkinimi";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(359, 392);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 21;
-            this.comboBox1.ValueMember = "mokki_id";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(275, 395);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 13);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Haluttu mökki";
-            // 
-            // btn_tallenna_varaus
-            // 
-            this.btn_tallenna_varaus.Location = new System.Drawing.Point(386, 447);
-            this.btn_tallenna_varaus.Name = "btn_tallenna_varaus";
-            this.btn_tallenna_varaus.Size = new System.Drawing.Size(145, 33);
-            this.btn_tallenna_varaus.TabIndex = 19;
-            this.btn_tallenna_varaus.Text = "TALLENNA VARAUS";
-            this.btn_tallenna_varaus.UseVisualStyleBackColor = true;
-            this.btn_tallenna_varaus.Click += new System.EventHandler(this.btn_tallenna_varaus_Click);
-            // 
-            // cbHaluttupalvelu
-            // 
-            this.cbHaluttupalvelu.DataSource = this.palveluBindingSource;
-            this.cbHaluttupalvelu.DisplayMember = "nimi";
-            this.cbHaluttupalvelu.FormattingEnabled = true;
-            this.cbHaluttupalvelu.Location = new System.Drawing.Point(359, 368);
-            this.cbHaluttupalvelu.Name = "cbHaluttupalvelu";
-            this.cbHaluttupalvelu.Size = new System.Drawing.Size(121, 21);
-            this.cbHaluttupalvelu.TabIndex = 16;
-            this.cbHaluttupalvelu.ValueMember = "nimi";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(275, 371);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Haluttu palvelu";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(284, 331);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Varaus loppu";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(284, 305);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Varaus alku";
-            // 
-            // tbPuhnro
-            // 
-            this.tbPuhnro.Location = new System.Drawing.Point(112, 402);
-            this.tbPuhnro.Name = "tbPuhnro";
-            this.tbPuhnro.Size = new System.Drawing.Size(121, 20);
-            this.tbPuhnro.TabIndex = 12;
-            // 
-            // tbPostinro
-            // 
-            this.tbPostinro.Location = new System.Drawing.Point(112, 428);
-            this.tbPostinro.Name = "tbPostinro";
-            this.tbPostinro.Size = new System.Drawing.Size(121, 20);
-            this.tbPostinro.TabIndex = 11;
-            // 
-            // tbOsoite
-            // 
-            this.tbOsoite.Location = new System.Drawing.Point(112, 376);
-            this.tbOsoite.Name = "tbOsoite";
-            this.tbOsoite.Size = new System.Drawing.Size(121, 20);
-            this.tbOsoite.TabIndex = 10;
-            // 
-            // tbSposti
-            // 
-            this.tbSposti.Location = new System.Drawing.Point(112, 350);
-            this.tbSposti.Name = "tbSposti";
-            this.tbSposti.Size = new System.Drawing.Size(121, 20);
-            this.tbSposti.TabIndex = 9;
-            // 
-            // tbSnimi
-            // 
-            this.tbSnimi.Location = new System.Drawing.Point(112, 324);
-            this.tbSnimi.Name = "tbSnimi";
-            this.tbSnimi.Size = new System.Drawing.Size(121, 20);
-            this.tbSnimi.TabIndex = 8;
-            // 
-            // tbEnimi
-            // 
-            this.tbEnimi.Location = new System.Drawing.Point(112, 298);
-            this.tbEnimi.Name = "tbEnimi";
-            this.tbEnimi.Size = new System.Drawing.Size(121, 20);
-            this.tbEnimi.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 383);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Osoite";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 409);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Puhelinnro";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 435);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Postinumero";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 357);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Sähköposti";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 331);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Sukunimi";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 305);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Etunimi";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(86, 263);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Asiakastiedot";
-            // 
-            // varausTableAdapter
-            // 
-            this.varausTableAdapter.ClearBeforeFill = true;
-            // 
-            // varauksenpalvelutBindingSource
-            // 
-            this.varauksenpalvelutBindingSource.DataMember = "varauksen_palvelut";
-            this.varauksenpalvelutBindingSource.DataSource = this.dataSet1BindingSource;
-            // 
-            // varauksen_palvelutTableAdapter
-            // 
-            this.varauksen_palvelutTableAdapter.ClearBeforeFill = true;
-            // 
-            // palveluTableAdapter
-            // 
-            this.palveluTableAdapter.ClearBeforeFill = true;
-            // 
-            // postiBindingSource
-            // 
-            this.postiBindingSource.DataMember = "posti";
-            this.postiBindingSource.DataSource = this.dataSet1BindingSource;
-            // 
-            // postiTableAdapter
-            // 
-            this.postiTableAdapter.ClearBeforeFill = true;
-            // 
-            // toimintaalueTableAdapter
-            // 
-            this.toimintaalueTableAdapter.ClearBeforeFill = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(359, 299);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 24;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(359, 331);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 25;
-            // 
             // dgvUusivaraus_asiakas
             // 
             this.dgvUusivaraus_asiakas.AllowUserToAddRows = false;
@@ -1425,6 +1194,239 @@ namespace R22_Kurssityo
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(359, 331);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 25;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(359, 299);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 24;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(23, 457);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Postitoimipaikka";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.mokkiBindingSource;
+            this.comboBox1.DisplayMember = "mokkinimi";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(359, 392);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 21;
+            this.comboBox1.ValueMember = "mokki_id";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(275, 395);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 13);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Haluttu mökki";
+            // 
+            // tbEnimi
+            // 
+            this.tbEnimi.Location = new System.Drawing.Point(112, 298);
+            this.tbEnimi.Name = "tbEnimi";
+            this.tbEnimi.Size = new System.Drawing.Size(121, 20);
+            this.tbEnimi.TabIndex = 7;
+            // 
+            // btn_tallenna_varaus
+            // 
+            this.btn_tallenna_varaus.Location = new System.Drawing.Point(386, 447);
+            this.btn_tallenna_varaus.Name = "btn_tallenna_varaus";
+            this.btn_tallenna_varaus.Size = new System.Drawing.Size(145, 33);
+            this.btn_tallenna_varaus.TabIndex = 19;
+            this.btn_tallenna_varaus.Text = "TALLENNA VARAUS";
+            this.btn_tallenna_varaus.UseVisualStyleBackColor = true;
+            this.btn_tallenna_varaus.Click += new System.EventHandler(this.btn_tallenna_varaus_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(86, 263);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Asiakastiedot";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 409);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Puhelinnro";
+            // 
+            // tbPostitoimip
+            // 
+            this.tbPostitoimip.Location = new System.Drawing.Point(112, 454);
+            this.tbPostitoimip.Name = "tbPostitoimip";
+            this.tbPostitoimip.Size = new System.Drawing.Size(121, 20);
+            this.tbPostitoimip.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 435);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Postinumero";
+            // 
+            // cbHaluttupalvelu
+            // 
+            this.cbHaluttupalvelu.DataSource = this.palveluBindingSource;
+            this.cbHaluttupalvelu.DisplayMember = "nimi";
+            this.cbHaluttupalvelu.FormattingEnabled = true;
+            this.cbHaluttupalvelu.Location = new System.Drawing.Point(359, 368);
+            this.cbHaluttupalvelu.Name = "cbHaluttupalvelu";
+            this.cbHaluttupalvelu.Size = new System.Drawing.Size(121, 21);
+            this.cbHaluttupalvelu.TabIndex = 16;
+            this.cbHaluttupalvelu.ValueMember = "nimi";
+            // 
+            // tbPostinro
+            // 
+            this.tbPostinro.Location = new System.Drawing.Point(112, 428);
+            this.tbPostinro.Name = "tbPostinro";
+            this.tbPostinro.Size = new System.Drawing.Size(121, 20);
+            this.tbPostinro.TabIndex = 11;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(275, 371);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Haluttu palvelu";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 383);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Osoite";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(284, 331);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Varaus loppu";
+            // 
+            // tbOsoite
+            // 
+            this.tbOsoite.Location = new System.Drawing.Point(112, 376);
+            this.tbOsoite.Name = "tbOsoite";
+            this.tbOsoite.Size = new System.Drawing.Size(121, 20);
+            this.tbOsoite.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(284, 305);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Varaus alku";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 357);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Sähköposti";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 305);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Etunimi";
+            // 
+            // tbSposti
+            // 
+            this.tbSposti.Location = new System.Drawing.Point(112, 350);
+            this.tbSposti.Name = "tbSposti";
+            this.tbSposti.Size = new System.Drawing.Size(121, 20);
+            this.tbSposti.TabIndex = 9;
+            // 
+            // tbSnimi
+            // 
+            this.tbSnimi.Location = new System.Drawing.Point(112, 324);
+            this.tbSnimi.Name = "tbSnimi";
+            this.tbSnimi.Size = new System.Drawing.Size(121, 20);
+            this.tbSnimi.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 331);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Sukunimi";
+            // 
+            // tbPuhnro
+            // 
+            this.tbPuhnro.Location = new System.Drawing.Point(112, 402);
+            this.tbPuhnro.Name = "tbPuhnro";
+            this.tbPuhnro.Size = new System.Drawing.Size(121, 20);
+            this.tbPuhnro.TabIndex = 12;
+            // 
+            // varausTableAdapter
+            // 
+            this.varausTableAdapter.ClearBeforeFill = true;
+            // 
+            // varauksenpalvelutBindingSource
+            // 
+            this.varauksenpalvelutBindingSource.DataMember = "varauksen_palvelut";
+            this.varauksenpalvelutBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // varauksen_palvelutTableAdapter
+            // 
+            this.varauksen_palvelutTableAdapter.ClearBeforeFill = true;
+            // 
+            // palveluTableAdapter
+            // 
+            this.palveluTableAdapter.ClearBeforeFill = true;
+            // 
+            // postiBindingSource
+            // 
+            this.postiBindingSource.DataMember = "posti";
+            this.postiBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // postiTableAdapter
+            // 
+            this.postiTableAdapter.ClearBeforeFill = true;
+            // 
+            // toimintaalueTableAdapter
+            // 
+            this.toimintaalueTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1460,9 +1462,9 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tab_uusivaraus.ResumeLayout(false);
             this.tab_uusivaraus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUusivaraus_asiakas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUusivaraus_asiakas)).EndInit();
             this.ResumeLayout(false);
 
         }

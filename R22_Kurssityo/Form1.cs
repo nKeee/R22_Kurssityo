@@ -128,5 +128,19 @@ namespace R22_Kurssityo
                 e.Handled = true;
             }
         }
+
+        private void btnVahvistaVaraus_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void btnPoistaVaraus_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dgVaraukset.SelectedRows)
+            {
+                dgVaraukset.Rows.RemoveAt(item.Index);
+            }
+        }
     }
 }
