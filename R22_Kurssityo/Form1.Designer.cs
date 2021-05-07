@@ -700,16 +700,16 @@ namespace R22_Kurssityo
             this.panel1.Controls.Add(this.btnVahvistaVaraus);
             this.panel1.Controls.Add(this.btnPoistaVaraus);
             this.panel1.Controls.Add(this.btnMuokkaaVaraus);
-            this.panel1.Location = new System.Drawing.Point(22, 156);
+            this.panel1.Location = new System.Drawing.Point(18, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(394, 351);
+            this.panel1.Size = new System.Drawing.Size(441, 354);
             this.panel1.TabIndex = 10;
             // 
             // btnVahvistaVaraus
             // 
-            this.btnVahvistaVaraus.Location = new System.Drawing.Point(6, 37);
+            this.btnVahvistaVaraus.Location = new System.Drawing.Point(0, 70);
             this.btnVahvistaVaraus.Name = "btnVahvistaVaraus";
-            this.btnVahvistaVaraus.Size = new System.Drawing.Size(388, 75);
+            this.btnVahvistaVaraus.Size = new System.Drawing.Size(438, 75);
             this.btnVahvistaVaraus.TabIndex = 16;
             this.btnVahvistaVaraus.Text = "Vahvista varaus";
             this.btnVahvistaVaraus.UseVisualStyleBackColor = true;
@@ -717,9 +717,9 @@ namespace R22_Kurssityo
             // 
             // btnPoistaVaraus
             // 
-            this.btnPoistaVaraus.Location = new System.Drawing.Point(3, 220);
+            this.btnPoistaVaraus.Location = new System.Drawing.Point(0, 232);
             this.btnPoistaVaraus.Name = "btnPoistaVaraus";
-            this.btnPoistaVaraus.Size = new System.Drawing.Size(391, 78);
+            this.btnPoistaVaraus.Size = new System.Drawing.Size(438, 78);
             this.btnPoistaVaraus.TabIndex = 15;
             this.btnPoistaVaraus.Text = "Poista varaus";
             this.btnPoistaVaraus.UseVisualStyleBackColor = true;
@@ -727,9 +727,9 @@ namespace R22_Kurssityo
             // 
             // btnMuokkaaVaraus
             // 
-            this.btnMuokkaaVaraus.Location = new System.Drawing.Point(6, 129);
+            this.btnMuokkaaVaraus.Location = new System.Drawing.Point(3, 151);
             this.btnMuokkaaVaraus.Name = "btnMuokkaaVaraus";
-            this.btnMuokkaaVaraus.Size = new System.Drawing.Size(388, 75);
+            this.btnMuokkaaVaraus.Size = new System.Drawing.Size(435, 75);
             this.btnMuokkaaVaraus.TabIndex = 14;
             this.btnMuokkaaVaraus.Text = "Muokkaa varausta";
             this.btnMuokkaaVaraus.UseVisualStyleBackColor = true;
