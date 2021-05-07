@@ -51,6 +51,11 @@ namespace R22_Kurssityo
             asiakasTableAdapter.Update(this.dataSet1);
             asiakasTableAdapter.Insert(tbPostinro.Text, tbEnimi.Text, tbSnimi.Text, tbOsoite.Text, tbSposti.Text, tbPuhnro.Text);
             this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
+            //Ja nyt varaus sisään
+            varausBindingSource.EndEdit();
+            varausTableAdapter.Update(this.dataSet1);
+            //varausTableAdapter.Insert(dgvUusivaraus_asiakas.)
+            // label33.Text = DateTime.Now.ToString("dd/M/yyyy");
         }
 
         private void btnHaeVaraus_Click(object sender, EventArgs e)
