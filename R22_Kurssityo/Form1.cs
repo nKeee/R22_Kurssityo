@@ -131,9 +131,9 @@ namespace R22_Kurssityo
 
         private void btnVahvistaVaraus_Click(object sender, EventArgs e)
         {
-            
-           
-            dgVaraukset.Rows[dgVaraukset.CurrentRow].Cells[4].Value = DateTime.Now;
+
+            dgVaraukset.CurrentRow.Cells[4].Value = DateTime.Now.ToString("dd/M/yyyy");
+            this.varausTableAdapter.Update(this.dataSet1.varaus);
 
         }
 
