@@ -92,20 +92,8 @@ namespace R22_Kurssityo
             this.textVarausNumero = new System.Windows.Forms.TextBox();
             this.tab_varaus = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnVahvistaVaraus = new System.Windows.Forms.Button();
-            this.btnLisaaVaraus = new System.Windows.Forms.Button();
-            this.dtpVarattu = new System.Windows.Forms.DateTimePicker();
-            this.lblVarattu = new System.Windows.Forms.Label();
-            this.tbMokkiID = new System.Windows.Forms.TextBox();
-            this.lblMokkiID = new System.Windows.Forms.Label();
-            this.lblVarausID = new System.Windows.Forms.Label();
-            this.dtpVarausPaattyy = new System.Windows.Forms.DateTimePicker();
-            this.tbVarausID = new System.Windows.Forms.TextBox();
-            this.lblVarausPaattyy = new System.Windows.Forms.Label();
-            this.lblAsiakasID = new System.Windows.Forms.Label();
-            this.dtpVarauksenAloitus = new System.Windows.Forms.DateTimePicker();
-            this.tbAsiakasID = new System.Windows.Forms.TextBox();
-            this.lblVarausAloitus = new System.Windows.Forms.Label();
+            this.btnPoistaVaraus = new System.Windows.Forms.Button();
+            this.btnMuokkaaVaraus = new System.Windows.Forms.Button();
             this.dgVaraukset = new System.Windows.Forms.DataGridView();
             this.varausidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asiakasidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,6 +104,8 @@ namespace R22_Kurssityo
             this.varattuloppupvmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tab_palvelut = new System.Windows.Forms.TabPage();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.tbPalvelualv = new System.Windows.Forms.TextBox();
             this.tbPalveluhinta = new System.Windows.Forms.TextBox();
             this.tbPalvelukuvaus = new System.Windows.Forms.TextBox();
@@ -176,8 +166,7 @@ namespace R22_Kurssityo
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
             this.toimintaalueTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.toimintaalueTableAdapter();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnVahvistaVaraus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -751,138 +740,30 @@ namespace R22_Kurssityo
             // panel1
             // 
             this.panel1.Controls.Add(this.btnVahvistaVaraus);
-            this.panel1.Controls.Add(this.btnLisaaVaraus);
-            this.panel1.Controls.Add(this.dtpVarattu);
-            this.panel1.Controls.Add(this.lblVarattu);
-            this.panel1.Controls.Add(this.tbMokkiID);
-            this.panel1.Controls.Add(this.lblMokkiID);
-            this.panel1.Controls.Add(this.lblVarausID);
-            this.panel1.Controls.Add(this.dtpVarausPaattyy);
-            this.panel1.Controls.Add(this.tbVarausID);
-            this.panel1.Controls.Add(this.lblVarausPaattyy);
-            this.panel1.Controls.Add(this.lblAsiakasID);
-            this.panel1.Controls.Add(this.dtpVarauksenAloitus);
-            this.panel1.Controls.Add(this.tbAsiakasID);
-            this.panel1.Controls.Add(this.lblVarausAloitus);
+            this.panel1.Controls.Add(this.btnPoistaVaraus);
+            this.panel1.Controls.Add(this.btnMuokkaaVaraus);
             this.panel1.Location = new System.Drawing.Point(22, 156);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(394, 351);
             this.panel1.TabIndex = 10;
             // 
-            // btnVahvistaVaraus
+            // btnPoistaVaraus
             // 
-            this.btnVahvistaVaraus.Location = new System.Drawing.Point(247, 252);
-            this.btnVahvistaVaraus.Name = "btnVahvistaVaraus";
-            this.btnVahvistaVaraus.Size = new System.Drawing.Size(122, 78);
-            this.btnVahvistaVaraus.TabIndex = 15;
-            this.btnVahvistaVaraus.Text = "Vahvista varaus";
-            this.btnVahvistaVaraus.UseVisualStyleBackColor = true;
+            this.btnPoistaVaraus.Location = new System.Drawing.Point(3, 220);
+            this.btnPoistaVaraus.Name = "btnPoistaVaraus";
+            this.btnPoistaVaraus.Size = new System.Drawing.Size(391, 78);
+            this.btnPoistaVaraus.TabIndex = 15;
+            this.btnPoistaVaraus.Text = "Poista varaus";
+            this.btnPoistaVaraus.UseVisualStyleBackColor = true;
             // 
-            // btnLisaaVaraus
+            // btnMuokkaaVaraus
             // 
-            this.btnLisaaVaraus.Location = new System.Drawing.Point(247, 171);
-            this.btnLisaaVaraus.Name = "btnLisaaVaraus";
-            this.btnLisaaVaraus.Size = new System.Drawing.Size(122, 75);
-            this.btnLisaaVaraus.TabIndex = 14;
-            this.btnLisaaVaraus.Text = "Lisää varaus";
-            this.btnLisaaVaraus.UseVisualStyleBackColor = true;
-            // 
-            // dtpVarattu
-            // 
-            this.dtpVarattu.Location = new System.Drawing.Point(17, 171);
-            this.dtpVarattu.Name = "dtpVarattu";
-            this.dtpVarattu.Size = new System.Drawing.Size(200, 20);
-            this.dtpVarattu.TabIndex = 13;
-            // 
-            // lblVarattu
-            // 
-            this.lblVarattu.AutoSize = true;
-            this.lblVarattu.Location = new System.Drawing.Point(14, 155);
-            this.lblVarattu.Name = "lblVarattu";
-            this.lblVarattu.Size = new System.Drawing.Size(41, 13);
-            this.lblVarattu.TabIndex = 12;
-            this.lblVarattu.Text = "Varattu";
-            // 
-            // tbMokkiID
-            // 
-            this.tbMokkiID.Location = new System.Drawing.Point(17, 115);
-            this.tbMokkiID.Name = "tbMokkiID";
-            this.tbMokkiID.Size = new System.Drawing.Size(200, 20);
-            this.tbMokkiID.TabIndex = 11;
-            // 
-            // lblMokkiID
-            // 
-            this.lblMokkiID.AutoSize = true;
-            this.lblMokkiID.Location = new System.Drawing.Point(14, 99);
-            this.lblMokkiID.Name = "lblMokkiID";
-            this.lblMokkiID.Size = new System.Drawing.Size(50, 13);
-            this.lblMokkiID.TabIndex = 10;
-            this.lblMokkiID.Text = "Mökki ID";
-            // 
-            // lblVarausID
-            // 
-            this.lblVarausID.AutoSize = true;
-            this.lblVarausID.Location = new System.Drawing.Point(14, 0);
-            this.lblVarausID.Name = "lblVarausID";
-            this.lblVarausID.Size = new System.Drawing.Size(54, 13);
-            this.lblVarausID.TabIndex = 3;
-            this.lblVarausID.Text = "Varaus ID";
-            // 
-            // dtpVarausPaattyy
-            // 
-            this.dtpVarausPaattyy.Location = new System.Drawing.Point(18, 286);
-            this.dtpVarausPaattyy.Name = "dtpVarausPaattyy";
-            this.dtpVarausPaattyy.Size = new System.Drawing.Size(200, 20);
-            this.dtpVarausPaattyy.TabIndex = 9;
-            // 
-            // tbVarausID
-            // 
-            this.tbVarausID.Location = new System.Drawing.Point(17, 16);
-            this.tbVarausID.Name = "tbVarausID";
-            this.tbVarausID.Size = new System.Drawing.Size(199, 20);
-            this.tbVarausID.TabIndex = 4;
-            // 
-            // lblVarausPaattyy
-            // 
-            this.lblVarausPaattyy.AutoSize = true;
-            this.lblVarausPaattyy.Location = new System.Drawing.Point(15, 270);
-            this.lblVarausPaattyy.Name = "lblVarausPaattyy";
-            this.lblVarausPaattyy.Size = new System.Drawing.Size(77, 13);
-            this.lblVarausPaattyy.TabIndex = 8;
-            this.lblVarausPaattyy.Text = "Varaus päättyy";
-            // 
-            // lblAsiakasID
-            // 
-            this.lblAsiakasID.AutoSize = true;
-            this.lblAsiakasID.Location = new System.Drawing.Point(14, 48);
-            this.lblAsiakasID.Name = "lblAsiakasID";
-            this.lblAsiakasID.Size = new System.Drawing.Size(58, 13);
-            this.lblAsiakasID.TabIndex = 1;
-            this.lblAsiakasID.Text = "Asiakas ID";
-            // 
-            // dtpVarauksenAloitus
-            // 
-            this.dtpVarauksenAloitus.CustomFormat = "";
-            this.dtpVarauksenAloitus.Location = new System.Drawing.Point(17, 226);
-            this.dtpVarauksenAloitus.Name = "dtpVarauksenAloitus";
-            this.dtpVarauksenAloitus.Size = new System.Drawing.Size(200, 20);
-            this.dtpVarauksenAloitus.TabIndex = 7;
-            // 
-            // tbAsiakasID
-            // 
-            this.tbAsiakasID.Location = new System.Drawing.Point(18, 64);
-            this.tbAsiakasID.Name = "tbAsiakasID";
-            this.tbAsiakasID.Size = new System.Drawing.Size(199, 20);
-            this.tbAsiakasID.TabIndex = 2;
-            // 
-            // lblVarausAloitus
-            // 
-            this.lblVarausAloitus.AutoSize = true;
-            this.lblVarausAloitus.Location = new System.Drawing.Point(15, 210);
-            this.lblVarausAloitus.Name = "lblVarausAloitus";
-            this.lblVarausAloitus.Size = new System.Drawing.Size(91, 13);
-            this.lblVarausAloitus.TabIndex = 6;
-            this.lblVarausAloitus.Text = "Varauksen aloitus";
+            this.btnMuokkaaVaraus.Location = new System.Drawing.Point(6, 129);
+            this.btnMuokkaaVaraus.Name = "btnMuokkaaVaraus";
+            this.btnMuokkaaVaraus.Size = new System.Drawing.Size(388, 75);
+            this.btnMuokkaaVaraus.TabIndex = 14;
+            this.btnMuokkaaVaraus.Text = "Muokkaa varausta";
+            this.btnMuokkaaVaraus.UseVisualStyleBackColor = true;
             // 
             // dgVaraukset
             // 
@@ -985,6 +866,23 @@ namespace R22_Kurssityo
             this.tab_palvelut.TabIndex = 5;
             this.tab_palvelut.Text = "Palvelut";
             this.tab_palvelut.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(556, 238);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.TabIndex = 43;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(457, 245);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(86, 13);
+            this.label32.TabIndex = 42;
+            this.label32.Text = "Palvelun numero";
             // 
             // tbPalvelualv
             // 
@@ -1486,22 +1384,14 @@ namespace R22_Kurssityo
             // 
             this.toimintaalueTableAdapter.ClearBeforeFill = true;
             // 
-            // label32
+            // btnVahvistaVaraus
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(457, 245);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(86, 13);
-            this.label32.TabIndex = 42;
-            this.label32.Text = "Palvelun numero";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(556, 238);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 43;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.btnVahvistaVaraus.Location = new System.Drawing.Point(6, 37);
+            this.btnVahvistaVaraus.Name = "btnVahvistaVaraus";
+            this.btnVahvistaVaraus.Size = new System.Drawing.Size(388, 75);
+            this.btnVahvistaVaraus.TabIndex = 16;
+            this.btnVahvistaVaraus.Text = "Vahvista varaus";
+            this.btnVahvistaVaraus.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1530,7 +1420,6 @@ namespace R22_Kurssityo
             this.tab_laskutus.PerformLayout();
             this.tab_varaus.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVaraukset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
             this.tab_palvelut.ResumeLayout(false);
@@ -1611,21 +1500,9 @@ namespace R22_Kurssityo
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblVarausID;
-        private System.Windows.Forms.TextBox tbAsiakasID;
-        private System.Windows.Forms.Label lblAsiakasID;
-        private System.Windows.Forms.TextBox tbVarausID;
-        private System.Windows.Forms.DateTimePicker dtpVarausPaattyy;
-        private System.Windows.Forms.Label lblVarausPaattyy;
-        private System.Windows.Forms.DateTimePicker dtpVarauksenAloitus;
-        private System.Windows.Forms.Label lblVarausAloitus;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tbMokkiID;
-        private System.Windows.Forms.Label lblMokkiID;
-        private System.Windows.Forms.DateTimePicker dtpVarattu;
-        private System.Windows.Forms.Label lblVarattu;
-        private System.Windows.Forms.Button btnLisaaVaraus;
-        private System.Windows.Forms.Button btnVahvistaVaraus;
+        private System.Windows.Forms.Button btnMuokkaaVaraus;
+        private System.Windows.Forms.Button btnPoistaVaraus;
         private System.Windows.Forms.BindingSource varauksenpalvelutBindingSource;
         private DataSet1TableAdapters.varauksen_palvelutTableAdapter varauksen_palvelutTableAdapter;
         private System.Windows.Forms.BindingSource palveluBindingSource;
@@ -1695,6 +1572,7 @@ namespace R22_Kurssityo
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button btnVahvistaVaraus;
     }
 }
 
