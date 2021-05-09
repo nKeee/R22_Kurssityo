@@ -86,6 +86,7 @@ namespace R22_Kurssityo
             this.btnHaeVaraus = new System.Windows.Forms.Button();
             this.textVarausNumero = new System.Windows.Forms.TextBox();
             this.tab_varaus = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVahvistaVaraus = new System.Windows.Forms.Button();
             this.btnPoistaVaraus = new System.Windows.Forms.Button();
@@ -169,7 +170,15 @@ namespace R22_Kurssityo
             this.postiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postiTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.postiTableAdapter();
             this.toimintaalueTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.toimintaalueTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dSlasku = new R22_Kurssityo.DSlasku();
+            this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.laskuTableAdapter = new R22_Kurssityo.DSlaskuTableAdapters.laskuTableAdapter();
+            this.laskuidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varausidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPoistaLasku = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -194,6 +203,9 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.dgvUusivaraus_asiakas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSlasku)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // asiakasBindingSource
@@ -555,7 +567,7 @@ namespace R22_Kurssityo
             this.tab_asiakkaat.Location = new System.Drawing.Point(4, 22);
             this.tab_asiakkaat.Name = "tab_asiakkaat";
             this.tab_asiakkaat.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_asiakkaat.Size = new System.Drawing.Size(760, 510);
+            this.tab_asiakkaat.Size = new System.Drawing.Size(763, 510);
             this.tab_asiakkaat.TabIndex = 0;
             this.tab_asiakkaat.Text = "Asiakkaat";
             this.tab_asiakkaat.UseVisualStyleBackColor = true;
@@ -579,7 +591,7 @@ namespace R22_Kurssityo
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(754, 207);
+            this.dataGridView1.Size = new System.Drawing.Size(757, 207);
             this.dataGridView1.TabIndex = 5;
             // 
             // asiakasidDataGridViewTextBoxColumn
@@ -648,12 +660,14 @@ namespace R22_Kurssityo
             // 
             // tab_laskutus
             // 
+            this.tab_laskutus.Controls.Add(this.btnPoistaLasku);
+            this.tab_laskutus.Controls.Add(this.dataGridView6);
             this.tab_laskutus.Controls.Add(this.label15);
             this.tab_laskutus.Controls.Add(this.btnHaeVaraus);
             this.tab_laskutus.Controls.Add(this.textVarausNumero);
             this.tab_laskutus.Location = new System.Drawing.Point(4, 22);
             this.tab_laskutus.Name = "tab_laskutus";
-            this.tab_laskutus.Size = new System.Drawing.Size(760, 510);
+            this.tab_laskutus.Size = new System.Drawing.Size(763, 510);
             this.tab_laskutus.TabIndex = 2;
             this.tab_laskutus.Text = "Laskutus";
             this.tab_laskutus.UseVisualStyleBackColor = true;
@@ -661,7 +675,7 @@ namespace R22_Kurssityo
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(59, 67);
+            this.label15.Location = new System.Drawing.Point(26, 301);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(101, 13);
             this.label15.TabIndex = 2;
@@ -669,7 +683,7 @@ namespace R22_Kurssityo
             // 
             // btnHaeVaraus
             // 
-            this.btnHaeVaraus.Location = new System.Drawing.Point(62, 127);
+            this.btnHaeVaraus.Location = new System.Drawing.Point(29, 335);
             this.btnHaeVaraus.Name = "btnHaeVaraus";
             this.btnHaeVaraus.Size = new System.Drawing.Size(75, 23);
             this.btnHaeVaraus.TabIndex = 1;
@@ -679,7 +693,7 @@ namespace R22_Kurssityo
             // 
             // textVarausNumero
             // 
-            this.textVarausNumero.Location = new System.Drawing.Point(164, 130);
+            this.textVarausNumero.Location = new System.Drawing.Point(138, 338);
             this.textVarausNumero.Name = "textVarausNumero";
             this.textVarausNumero.Size = new System.Drawing.Size(100, 20);
             this.textVarausNumero.TabIndex = 0;
@@ -695,6 +709,16 @@ namespace R22_Kurssityo
             this.tab_varaus.TabIndex = 3;
             this.tab_varaus.Text = "Varaushallinta";
             this.tab_varaus.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(321, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 24);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Varaukset";
             // 
             // panel1
             // 
@@ -1418,15 +1442,67 @@ namespace R22_Kurssityo
             // 
             this.toimintaalueTableAdapter.ClearBeforeFill = true;
             // 
-            // label1
+            // dataGridView6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(321, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 24);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Varaukset";
+            this.dataGridView6.AutoGenerateColumns = false;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.laskuidDataGridViewTextBoxColumn,
+            this.varausidDataGridViewTextBoxColumn1,
+            this.summaDataGridViewTextBoxColumn,
+            this.alvDataGridViewTextBoxColumn1});
+            this.dataGridView6.DataSource = this.laskuBindingSource;
+            this.dataGridView6.Location = new System.Drawing.Point(8, 12);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(410, 150);
+            this.dataGridView6.TabIndex = 3;
+            // 
+            // dSlasku
+            // 
+            this.dSlasku.DataSetName = "DSlasku";
+            this.dSlasku.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // laskuBindingSource
+            // 
+            this.laskuBindingSource.DataMember = "lasku";
+            this.laskuBindingSource.DataSource = this.dSlasku;
+            // 
+            // laskuTableAdapter
+            // 
+            this.laskuTableAdapter.ClearBeforeFill = true;
+            // 
+            // laskuidDataGridViewTextBoxColumn
+            // 
+            this.laskuidDataGridViewTextBoxColumn.DataPropertyName = "lasku_id";
+            this.laskuidDataGridViewTextBoxColumn.HeaderText = "lasku_id";
+            this.laskuidDataGridViewTextBoxColumn.Name = "laskuidDataGridViewTextBoxColumn";
+            // 
+            // varausidDataGridViewTextBoxColumn1
+            // 
+            this.varausidDataGridViewTextBoxColumn1.DataPropertyName = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn1.HeaderText = "varaus_id";
+            this.varausidDataGridViewTextBoxColumn1.Name = "varausidDataGridViewTextBoxColumn1";
+            // 
+            // summaDataGridViewTextBoxColumn
+            // 
+            this.summaDataGridViewTextBoxColumn.DataPropertyName = "summa";
+            this.summaDataGridViewTextBoxColumn.HeaderText = "summa";
+            this.summaDataGridViewTextBoxColumn.Name = "summaDataGridViewTextBoxColumn";
+            // 
+            // alvDataGridViewTextBoxColumn1
+            // 
+            this.alvDataGridViewTextBoxColumn1.DataPropertyName = "alv";
+            this.alvDataGridViewTextBoxColumn1.HeaderText = "alv";
+            this.alvDataGridViewTextBoxColumn1.Name = "alvDataGridViewTextBoxColumn1";
+            // 
+            // btnPoistaLasku
+            // 
+            this.btnPoistaLasku.Location = new System.Drawing.Point(163, 269);
+            this.btnPoistaLasku.Name = "btnPoistaLasku";
+            this.btnPoistaLasku.Size = new System.Drawing.Size(75, 23);
+            this.btnPoistaLasku.TabIndex = 4;
+            this.btnPoistaLasku.Text = "Poista lasku";
+            this.btnPoistaLasku.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1467,6 +1543,9 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.dgvUusivaraus_asiakas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSlasku)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1612,6 +1691,15 @@ namespace R22_Kurssityo
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private DSlasku dSlasku;
+        private System.Windows.Forms.BindingSource laskuBindingSource;
+        private DSlaskuTableAdapters.laskuTableAdapter laskuTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn laskuidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varausidDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn summaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alvDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button btnPoistaLasku;
     }
 }
 

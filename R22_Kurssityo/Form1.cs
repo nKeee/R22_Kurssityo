@@ -25,6 +25,8 @@ namespace R22_Kurssityo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dSlasku.lasku' table. You can move, or remove it, as needed.
+            this.laskuTableAdapter.Fill(this.dSlasku.lasku);
             // TODO: This line of code loads data into the 'dataSet1.toimintaalue' table. You can move, or remove it, as needed.
             this.toimintaalueTableAdapter.Fill(this.dataSet1.toimintaalue);
             //string connectionString = @"Dsn = village newbies; uid = root";
