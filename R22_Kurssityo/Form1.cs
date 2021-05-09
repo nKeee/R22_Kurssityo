@@ -25,14 +25,14 @@ namespace R22_Kurssityo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSlasku.lasku' table. You can move, or remove it, as needed.
+            
             this.laskuTableAdapter.Fill(this.dSlasku.lasku);
-            // TODO: This line of code loads data into the 'dataSet1.toimintaalue' table. You can move, or remove it, as needed.
-            this.toimintaalueTableAdapter.Fill(this.dataSet1.toimintaalue);
+            //Miksi täällä on extra datasetti ja mikä se on?
+
             //string connectionString = @"Dsn = village newbies; uid = root";
             //con = new MySqlConnection(connectionString);
             //con.Open();
-
+            this.toimintaalueTableAdapter.Fill(this.dataSet1.toimintaalue);
             this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
             this.postiTableAdapter.Fill(this.dataSet1.posti);
             this.palveluTableAdapter.Fill(this.dataSet1.palvelu);
@@ -56,8 +56,9 @@ namespace R22_Kurssityo
             //Ja nyt varaus sisään
             varausBindingSource.EndEdit();
             varausTableAdapter.Update(this.dataSet1);
-            //varausTableAdapter.Insert(dgvUusivaraus_asiakas.)
-            // label33.Text = DateTime.Now.ToString("dd/M/yyyy");
+            DateTime tyhja = new DateTime(1111, 11, 11);
+            long? asiakasnumero = asiakasTableAdapter.ScalarQuery();
+            varausTableAdapter.Insert((long)asiakasnumero, (long)cbMokki_varaus.SelectedValue, DateTime.Now.Date, tyhja , dateTimePicker1.Value, dateTimePicker2.Value);
         }
 
         private void btnHaeVaraus_Click(object sender, EventArgs e)
