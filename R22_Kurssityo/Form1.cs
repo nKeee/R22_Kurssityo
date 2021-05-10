@@ -25,10 +25,6 @@ namespace R22_Kurssityo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            this.laskuTableAdapter.Fill(this.dSlasku.lasku);
-            //Miksi täällä on extra datasetti ja mikä se on?
-
             //string connectionString = @"Dsn = village newbies; uid = root";
             //con = new MySqlConnection(connectionString);
             //con.Open();
@@ -39,6 +35,7 @@ namespace R22_Kurssityo
             this.varauksen_palvelutTableAdapter.Fill(this.dataSet1.varauksen_palvelut);
             this.varausTableAdapter.Fill(this.dataSet1.varaus);
             this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
+            this.laskuTableAdapter1.Fill(this.dataSet1.lasku);
         }
 
         private void btn_tallenna_varaus_Click(object sender, EventArgs e)
@@ -149,6 +146,14 @@ namespace R22_Kurssityo
                 dgVaraukset.Rows.RemoveAt(item.Index);
             }
             this.varausTableAdapter.Update(this.dataSet1.varaus);
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            Validate();
+            laskuBindingSource.EndEdit();
+            laskuTableAdapter1.Update(this.dataSet1.lasku);
+            //laskuTableAdapter1.Insert()
         }
     }
 }
