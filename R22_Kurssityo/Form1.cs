@@ -105,12 +105,29 @@ namespace R22_Kurssityo
             mokkiBindingSource.EndEdit();
             postiBindingSource.EndEdit();
             postiTableAdapter.Update(this.dataSet1);
-            postiTableAdapter.Insert(tbMokkipostinro.Text, tbMokkipostitoimipaik.Text);
-            //Lähetetään eka postitableen tiedot, koska mökkitablessa käytetään foreign keynä postinro.
-            //Ilman tätä järjestystä tulee erroria.
-            mokkiTableAdapter.Update(this.dataSet1);
-            mokkiTableAdapter.Insert((long)cbToimalue.SelectedValue, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
-            this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
+
+            bool loytyi = false;
+            foreach (DataRow dr in dataSet1.posti.Rows) //Tarkistetaan, löytyykö kirjotettu postinumero jo SQL:stä
+            {
+                string postinumero = dr["postinro"].ToString();
+                if (postinumero == tbMokkipostinro.Text)
+                    loytyi = true;
+            }
+            if(loytyi)
+            {
+                mokkiTableAdapter.Update(this.dataSet1);
+                mokkiTableAdapter.Insert((long)cbToimalue.SelectedValue, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
+                this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
+            }
+            else
+            {
+                postiTableAdapter.Insert(tbMokkipostinro.Text, tbMokkipostitoimipaik.Text);
+                //Lähetetään eka postitableen tiedot, koska mökkitablessa käytetään foreign keynä postinro.
+                //Ilman tätä järjestystä tulee erroria.
+                mokkiTableAdapter.Update(this.dataSet1);
+                mokkiTableAdapter.Insert((long)cbToimalue.SelectedValue, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
+                this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
+            }
         }
 
         private void btnUusitoimalue_Click(object sender, EventArgs e)
