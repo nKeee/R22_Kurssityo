@@ -44,18 +44,41 @@ namespace R22_Kurssityo
             asiakasBindingSource.EndEdit();
             postiBindingSource.EndEdit();
             postiTableAdapter.Update(this.dataSet1);
-            postiTableAdapter.Insert(tbPostinro.Text, tbPostitoimip.Text); 
-            //Lähetetään eka postitableen tiedot, koska asiakastablessa käytetään foreign keynä postinro.
-            //Ilman tätä järjestystä tulee erroria.
-            asiakasTableAdapter.Update(this.dataSet1);
-            asiakasTableAdapter.Insert(tbPostinro.Text, tbEnimi.Text, tbSnimi.Text, tbOsoite.Text, tbSposti.Text, tbPuhnro.Text);
-            this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
-            //Ja nyt varaus sisään
-            varausBindingSource.EndEdit();
-            varausTableAdapter.Update(this.dataSet1);
-            DateTime tyhja = new DateTime(1111, 11, 11);
-            long? asiakasnumero = asiakasTableAdapter.ScalarQuery();
-            varausTableAdapter.Insert((long)asiakasnumero, (long)cbMokki_varaus.SelectedValue, DateTime.Now.Date, tyhja , dateTimePicker1.Value, dateTimePicker2.Value);
+
+            bool loytyi = false;
+            foreach (DataRow dr in dataSet1.posti.Rows) //Tarkistetaan, löytyykö kirjotettu postinumero jo SQL:stä
+            {
+                string postinumero = dr["postinro"].ToString();
+                if (postinumero == tbPostinro.Text)
+                    loytyi = true;
+            }
+            if(loytyi) //Jos löytyi, niin ei luoda uutta postinumeroa posti tableen
+            {
+                asiakasTableAdapter.Update(this.dataSet1);
+                asiakasTableAdapter.Insert(tbPostinro.Text, tbEnimi.Text, tbSnimi.Text, tbOsoite.Text, tbSposti.Text, tbPuhnro.Text);
+                this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
+                varausBindingSource.EndEdit();
+                varausTableAdapter.Update(this.dataSet1);
+                DateTime tyhja = new DateTime(1111, 11, 11);
+                long? asiakasnumero = asiakasTableAdapter.ScalarQuery();
+                varausTableAdapter.Insert((long)asiakasnumero, (long)cbMokki_varaus.SelectedValue, DateTime.Now.Date, tyhja, dateTimePicker1.Value, dateTimePicker2.Value);
+            }
+
+            else //Jos ei löytynyt, niin luodaan uusi postinro
+            {
+                postiTableAdapter.Insert(tbPostinro.Text, tbPostitoimip.Text);
+                //Lähetetään eka postitableen tiedot, koska asiakastablessa käytetään foreign keynä postinro.
+                //Ilman tätä järjestystä tulee erroria.
+                asiakasTableAdapter.Update(this.dataSet1);
+                asiakasTableAdapter.Insert(tbPostinro.Text, tbEnimi.Text, tbSnimi.Text, tbOsoite.Text, tbSposti.Text, tbPuhnro.Text);
+                this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
+                //Ja nyt varaus sisään
+                varausBindingSource.EndEdit();
+                varausTableAdapter.Update(this.dataSet1);
+                DateTime tyhja = new DateTime(1111, 11, 11);
+                long? asiakasnumero = asiakasTableAdapter.ScalarQuery();
+                varausTableAdapter.Insert((long)asiakasnumero, (long)cbMokki_varaus.SelectedValue, DateTime.Now.Date, tyhja, dateTimePicker1.Value, dateTimePicker2.Value);
+            }
         }
 
         private void btnHaeVaraus_Click(object sender, EventArgs e)
