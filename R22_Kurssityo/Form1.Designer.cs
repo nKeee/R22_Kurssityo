@@ -72,7 +72,7 @@ namespace R22_Kurssityo
             this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_asiakkaat = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgAsiakkaat = new System.Windows.Forms.DataGridView();
             this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -183,6 +183,10 @@ namespace R22_Kurssityo
             this.toimintaalueTableAdapter = new R22_Kurssityo.DataSet1TableAdapters.toimintaalueTableAdapter();
             this.laskuTableAdapter = new R22_Kurssityo.DSlaskuTableAdapters.laskuTableAdapter();
             this.laskuTableAdapter1 = new R22_Kurssityo.DataSet1TableAdapters.laskuTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMuokkaaAsiakas = new System.Windows.Forms.Button();
+            this.btnPoistaAsiakas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -192,7 +196,7 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tab_asiakkaat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAsiakkaat)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tab_laskutus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUD)).BeginInit();
@@ -211,6 +215,7 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // asiakasBindingSource
@@ -568,7 +573,9 @@ namespace R22_Kurssityo
             // 
             // tab_asiakkaat
             // 
-            this.tab_asiakkaat.Controls.Add(this.dataGridView1);
+            this.tab_asiakkaat.Controls.Add(this.panel2);
+            this.tab_asiakkaat.Controls.Add(this.label2);
+            this.tab_asiakkaat.Controls.Add(this.dgAsiakkaat);
             this.tab_asiakkaat.Location = new System.Drawing.Point(4, 22);
             this.tab_asiakkaat.Name = "tab_asiakkaat";
             this.tab_asiakkaat.Padding = new System.Windows.Forms.Padding(3);
@@ -577,13 +584,13 @@ namespace R22_Kurssityo
             this.tab_asiakkaat.Text = "Asiakkaat";
             this.tab_asiakkaat.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgAsiakkaat
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgAsiakkaat.AllowUserToAddRows = false;
+            this.dgAsiakkaat.AllowUserToDeleteRows = false;
+            this.dgAsiakkaat.AutoGenerateColumns = false;
+            this.dgAsiakkaat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAsiakkaat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.asiakasidDataGridViewTextBoxColumn,
             this.postinroDataGridViewTextBoxColumn,
             this.etunimiDataGridViewTextBoxColumn,
@@ -591,13 +598,12 @@ namespace R22_Kurssityo
             this.lahiosoiteDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.puhelinnroDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.asiakasBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(757, 207);
-            this.dataGridView1.TabIndex = 5;
+            this.dgAsiakkaat.DataSource = this.asiakasBindingSource;
+            this.dgAsiakkaat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgAsiakkaat.Location = new System.Drawing.Point(3, 3);
+            this.dgAsiakkaat.Name = "dgAsiakkaat";
+            this.dgAsiakkaat.Size = new System.Drawing.Size(757, 241);
+            this.dgAsiakkaat.TabIndex = 5;
             // 
             // asiakasidDataGridViewTextBoxColumn
             // 
@@ -805,6 +811,7 @@ namespace R22_Kurssityo
             this.tab_varaus.TabIndex = 3;
             this.tab_varaus.Text = "Varaushallinta";
             this.tab_varaus.UseVisualStyleBackColor = true;
+            this.tab_varaus.Enter += new System.EventHandler(this.tab_varaus_Enter);
             // 
             // label1
             // 
@@ -877,42 +884,49 @@ namespace R22_Kurssityo
             this.varausidDataGridViewTextBoxColumn.DataPropertyName = "varaus_id";
             this.varausidDataGridViewTextBoxColumn.HeaderText = "varaus_id";
             this.varausidDataGridViewTextBoxColumn.Name = "varausidDataGridViewTextBoxColumn";
+            this.varausidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // asiakasidDataGridViewTextBoxColumn1
             // 
             this.asiakasidDataGridViewTextBoxColumn1.DataPropertyName = "asiakas_id";
             this.asiakasidDataGridViewTextBoxColumn1.HeaderText = "asiakas_id";
             this.asiakasidDataGridViewTextBoxColumn1.Name = "asiakasidDataGridViewTextBoxColumn1";
+            this.asiakasidDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // mokkimokkiidDataGridViewTextBoxColumn
             // 
             this.mokkimokkiidDataGridViewTextBoxColumn.DataPropertyName = "mokki_mokki_id";
             this.mokkimokkiidDataGridViewTextBoxColumn.HeaderText = "mokki_mokki_id";
             this.mokkimokkiidDataGridViewTextBoxColumn.Name = "mokkimokkiidDataGridViewTextBoxColumn";
+            this.mokkimokkiidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // varattupvmDataGridViewTextBoxColumn
             // 
             this.varattupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_pvm";
             this.varattupvmDataGridViewTextBoxColumn.HeaderText = "varattu_pvm";
             this.varattupvmDataGridViewTextBoxColumn.Name = "varattupvmDataGridViewTextBoxColumn";
+            this.varattupvmDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // vahvistuspvmDataGridViewTextBoxColumn
             // 
             this.vahvistuspvmDataGridViewTextBoxColumn.DataPropertyName = "vahvistus_pvm";
             this.vahvistuspvmDataGridViewTextBoxColumn.HeaderText = "vahvistus_pvm";
             this.vahvistuspvmDataGridViewTextBoxColumn.Name = "vahvistuspvmDataGridViewTextBoxColumn";
+            this.vahvistuspvmDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // varattualkupvmDataGridViewTextBoxColumn
             // 
             this.varattualkupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_alkupvm";
             this.varattualkupvmDataGridViewTextBoxColumn.HeaderText = "varattu_alkupvm";
             this.varattualkupvmDataGridViewTextBoxColumn.Name = "varattualkupvmDataGridViewTextBoxColumn";
+            this.varattualkupvmDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // varattuloppupvmDataGridViewTextBoxColumn
             // 
             this.varattuloppupvmDataGridViewTextBoxColumn.DataPropertyName = "varattu_loppupvm";
             this.varattuloppupvmDataGridViewTextBoxColumn.HeaderText = "varattu_loppupvm";
             this.varattuloppupvmDataGridViewTextBoxColumn.Name = "varattuloppupvmDataGridViewTextBoxColumn";
+            this.varattuloppupvmDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tab_palvelut
             // 
@@ -1542,6 +1556,45 @@ namespace R22_Kurssityo
             // 
             this.laskuTableAdapter1.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(332, 247);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 24);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Asiakkaat";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnPoistaAsiakas);
+            this.panel2.Controls.Add(this.btnMuokkaaAsiakas);
+            this.panel2.Location = new System.Drawing.Point(265, 284);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(227, 191);
+            this.panel2.TabIndex = 7;
+            // 
+            // btnMuokkaaAsiakas
+            // 
+            this.btnMuokkaaAsiakas.Location = new System.Drawing.Point(31, 14);
+            this.btnMuokkaaAsiakas.Name = "btnMuokkaaAsiakas";
+            this.btnMuokkaaAsiakas.Size = new System.Drawing.Size(169, 70);
+            this.btnMuokkaaAsiakas.TabIndex = 0;
+            this.btnMuokkaaAsiakas.Text = "Muokkaa asiakastietoja";
+            this.btnMuokkaaAsiakas.UseVisualStyleBackColor = true;
+            this.btnMuokkaaAsiakas.Click += new System.EventHandler(this.btnMuokkaaAsiakas_Click);
+            // 
+            // btnPoistaAsiakas
+            // 
+            this.btnPoistaAsiakas.Location = new System.Drawing.Point(31, 90);
+            this.btnPoistaAsiakas.Name = "btnPoistaAsiakas";
+            this.btnPoistaAsiakas.Size = new System.Drawing.Size(169, 81);
+            this.btnPoistaAsiakas.TabIndex = 1;
+            this.btnPoistaAsiakas.Text = "Poista ";
+            this.btnPoistaAsiakas.UseVisualStyleBackColor = true;
+            this.btnPoistaAsiakas.Click += new System.EventHandler(this.btnPoistaAsiakas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1562,7 +1615,8 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.toimintaalueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tab_asiakkaat.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tab_asiakkaat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAsiakkaat)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tab_laskutus.ResumeLayout(false);
             this.tab_laskutus.PerformLayout();
@@ -1585,6 +1639,7 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.varauksenpalvelutBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postiBindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1607,7 +1662,7 @@ namespace R22_Kurssityo
         private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tab_asiakkaat;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgAsiakkaat;
         private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postinroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn etunimiDataGridViewTextBoxColumn;
@@ -1743,6 +1798,10 @@ namespace R22_Kurssityo
         private System.Windows.Forms.ComboBox cbLasku;
         private System.Windows.Forms.ComboBox cbVaraus;
         private System.Windows.Forms.NumericUpDown nUD;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnPoistaAsiakas;
+        private System.Windows.Forms.Button btnMuokkaaAsiakas;
+        private System.Windows.Forms.Label label2;
     }
 }
 

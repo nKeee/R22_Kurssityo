@@ -229,5 +229,30 @@ namespace R22_Kurssityo
             //MessageBox.Show(cmd.ExecuteReader().Read().ToString());
         
         }
+
+        private void btnPoistaAsiakas_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dgAsiakkaat.SelectedRows)
+            {
+                dgAsiakkaat.Rows.RemoveAt(item.Index);
+            }
+            this.varausTableAdapter.Update(this.dataSet1.varaus);
+
+
+        }
+
+        private void tab_varaus_Enter(object sender, EventArgs e)
+        {
+            this.varausTableAdapter.Fill(this.dataSet1.varaus);
+        }
+
+        private void btnMuokkaaAsiakas_Click(object sender, EventArgs e)
+        {
+
+            Validate();
+            asiakasBindingSource.EndEdit();
+            asiakasTableAdapter.Update(this.dataSet1);
+            
+        }
     }
 }
