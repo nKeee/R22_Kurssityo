@@ -79,6 +79,13 @@ namespace R22_Kurssityo
                 long? asiakasnumero = asiakasTableAdapter.ScalarQuery();
                 varausTableAdapter.Insert((long)asiakasnumero, (long)cbMokki_varaus.SelectedValue, DateTime.Now.Date, tyhja, dateTimePicker1.Value, dateTimePicker2.Value);
             }
+            tbEnimi.Text = "";
+            tbSnimi.Text = "";
+            tbOsoite.Text = "";
+            tbSposti.Text = "";
+            tbPuhnro.Text = "";
+            tbPostinro.Text = "";
+            tbPostitoimip.Text = "";
         }
 
 
@@ -111,6 +118,13 @@ namespace R22_Kurssityo
                 mokkiTableAdapter.Insert((long)cbToimalue.SelectedValue, tbMokkipostinro.Text, tbMokkinimi.Text, tbMokkiosoite.Text, tbMokkikuvaus.Text, Convert.ToInt32(tbMokkihenkimaara.Text), tbMokkivarustelu.Text);
                 this.mokkiTableAdapter.Fill(this.dataSet1.mokki);
             }
+            tbMokkihenkimaara.Text = "";
+            tbMokkikuvaus.Text = "";
+            tbMokkinimi.Text = "";
+            tbMokkiosoite.Text = "";
+            tbMokkipostinro.Text = "";
+            tbMokkipostitoimipaik.Text = "";
+            tbMokkivarustelu.Text = "";
         }
 
         private void btnUusitoimalue_Click(object sender, EventArgs e)
@@ -120,6 +134,7 @@ namespace R22_Kurssityo
             toimintaalueTableAdapter.Update(this.dataSet1);
             toimintaalueTableAdapter.Insert(tbToimintaalue.Text);
             this.toimintaalueTableAdapter.Fill(this.dataSet1.toimintaalue);
+            tbToimintaalue.Text = "";
         }
 
         private void btnPoistaTA_Click(object sender, EventArgs e)

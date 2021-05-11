@@ -653,8 +653,8 @@ namespace R22_Kurssityo
             this.tabControl1.Controls.Add(this.tab_asiakkaat);
             this.tabControl1.Controls.Add(this.tab_laskutus);
             this.tabControl1.Controls.Add(this.tab_varaus);
-            this.tabControl1.Controls.Add(this.tab_mokit);
             this.tabControl1.Controls.Add(this.tab_palvelut);
+            this.tabControl1.Controls.Add(this.tab_mokit);
             this.tabControl1.Controls.Add(this.tab_uusivaraus);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -867,6 +867,7 @@ namespace R22_Kurssityo
             this.dgVaraukset.Location = new System.Drawing.Point(0, 0);
             this.dgVaraukset.MultiSelect = false;
             this.dgVaraukset.Name = "dgVaraukset";
+            this.dgVaraukset.ReadOnly = true;
             this.dgVaraukset.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVaraukset.Size = new System.Drawing.Size(763, 257);
             this.dgVaraukset.TabIndex = 0;
@@ -1545,7 +1546,7 @@ namespace R22_Kurssityo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 831);
+            this.ClientSize = new System.Drawing.Size(771, 540);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
