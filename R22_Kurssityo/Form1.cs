@@ -81,23 +81,6 @@ namespace R22_Kurssityo
             }
         }
 
-        private void btnHaeVaraus_Click(object sender, EventArgs e)
-        {
-            //Laskuun asiakkaan tietojen kirjoitus
-            string haku = textVarausNumero.Text;
-            string query = "SELECT * FROM varaus WHERE varaus_id="+haku+ " INNER JOIN asiakas ON varaus.asiakas_id=asiakas.asiakas_id";
-            SaveFileDialog saveLasku = new SaveFileDialog();
-            saveLasku.ShowDialog();
-            if (saveLasku.FileName != "") 
-            {
-                StreamWriter sw = new StreamWriter(saveLasku.FileName);
-                sw.WriteLine(query);
-                sw.Flush();
-                sw.Close();
-            }
-            //var cmd = new MySqlCommand(query, con);
-            //MessageBox.Show(cmd.ExecuteReader().Read().ToString());
-        }
 
         private void btn_uusimokki_Click(object sender, EventArgs e)
         {
@@ -193,7 +176,43 @@ namespace R22_Kurssityo
             Validate();
             laskuBindingSource.EndEdit();
             laskuTableAdapter1.Update(this.dataSet1.lasku);
-            //laskuTableAdapter1.Insert()
+            DateTime aloitus = dateTimePicker1.Value;
+            DateTime lopetus = dateTimePicker2.Value;
+            TimeSpan tp = aloitus - lopetus;
+            int erotusPaivina = tp.Days;
+            double verotonHinta = erotusPaivina * 100; //muutetaan tarvittaessa verolliseksi hinnaksi
+            laskuTableAdapter1.Insert(cbLasku.SelectedIndex, cbVaraus.SelectedIndex, verotonHinta, 24);
+
+        }
+
+        private void btnPoistaLasku_Click(object sender, EventArgs e)
+        {
+            Validate();
+            foreach (DataGridViewRow laskuRow in dgwLasku.SelectedCells)
+            {
+                if (laskuRow.Selected)
+                    dgwLasku.Rows.RemoveAt(laskuRow.Index);
+            }
+            this.laskuTableAdapter1.Update(this.dataSet1.lasku);
+
+        }
+        private void btnHaeVaraus_Click(object sender, EventArgs e)
+        {
+            //Laskuun asiakkaan tietojen kirjoitus
+            string haku = textVarausNumero.Text;
+            string query = "SELECT * FROM varaus WHERE varaus_id="+haku+ " INNER JOIN asiakas ON varaus.asiakas_id=asiakas.asiakas_id";
+            SaveFileDialog saveLasku = new SaveFileDialog();
+            saveLasku.ShowDialog();
+            if (saveLasku.FileName != "") 
+            {
+                StreamWriter sw = new StreamWriter(saveLasku.FileName);
+                sw.WriteLine(query);
+                sw.Flush();
+                sw.Close();
+            }
+            //var cmd = new MySqlCommand(query, con);
+            //MessageBox.Show(cmd.ExecuteReader().Read().ToString());
+        
         }
     }
 }
