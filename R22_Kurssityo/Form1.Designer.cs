@@ -1591,7 +1591,7 @@ namespace R22_Kurssityo
             this.btnPoistaAsiakas.Name = "btnPoistaAsiakas";
             this.btnPoistaAsiakas.Size = new System.Drawing.Size(169, 81);
             this.btnPoistaAsiakas.TabIndex = 1;
-            this.btnPoistaAsiakas.Text = "Poista ";
+            this.btnPoistaAsiakas.Text = "Poista";
             this.btnPoistaAsiakas.UseVisualStyleBackColor = true;
             this.btnPoistaAsiakas.Click += new System.EventHandler(this.btnPoistaAsiakas_Click);
             // 

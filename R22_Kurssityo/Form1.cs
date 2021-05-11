@@ -232,12 +232,21 @@ namespace R22_Kurssityo
 
         private void btnPoistaAsiakas_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in this.dgAsiakkaat.SelectedRows)
+            try
             {
-                dgAsiakkaat.Rows.RemoveAt(item.Index);
+                Validate();
+                asiakasBindingSource.EndEdit();
+                asiakasTableAdapter.Update(this.dataSet1);
+                dgAsiakkaat.Rows.RemoveAt(dgAsiakkaat.CurrentRow.Index);
+                this.asiakasTableAdapter.Update(this.dataSet1.asiakas);
             }
-            this.varausTableAdapter.Update(this.dataSet1.varaus);
-
+            catch
+            {
+                string message = " Poista varaus ensin varauksenhallinnasta!";
+                string title = "Huomio";
+                MessageBox.Show(message, title);
+                this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
+            }
 
         }
 
@@ -248,9 +257,7 @@ namespace R22_Kurssityo
 
         private void btnMuokkaaAsiakas_Click(object sender, EventArgs e)
         {
-
             Validate();
-            asiakasBindingSource.EndEdit();
             asiakasTableAdapter.Update(this.dataSet1);
             
         }
