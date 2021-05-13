@@ -175,6 +175,7 @@ namespace R22_Kurssityo
             dgVaraukset.CurrentRow.Cells[4].Value = DateTime.Now.ToString("dd/M/yyyy");
             this.varausTableAdapter.Update(this.dataSet1.varaus);
 
+ 
         }
 
         private void btnPoistaVaraus_Click(object sender, EventArgs e)
@@ -186,7 +187,7 @@ namespace R22_Kurssityo
             this.varausTableAdapter.Update(this.dataSet1.varaus);
         }
 
-        private void tabControl1_Click(object sender, EventArgs e)
+        private void tab_laskutus_Enter(object sender, EventArgs e)
         {
             Validate();
             laskuBindingSource.EndEdit();
@@ -203,7 +204,7 @@ namespace R22_Kurssityo
         private void btnPoistaLasku_Click(object sender, EventArgs e)
         {
             Validate();
-            foreach (DataGridViewRow laskuRow in dgwLasku.SelectedCells)
+            foreach (DataGridViewRow laskuRow in dgwLasku.SelectedRows)
             {
                 if (laskuRow.Selected)
                     dgwLasku.Rows.RemoveAt(laskuRow.Index);
@@ -258,8 +259,10 @@ namespace R22_Kurssityo
         private void btnMuokkaaAsiakas_Click(object sender, EventArgs e)
         {
             Validate();
-            asiakasTableAdapter.Update(this.dataSet1);
+            asiakasTableAdapter.Update(this.dataSet1); 
             
         }
+
+
     }
 }
