@@ -86,10 +86,7 @@ namespace R22_Kurssityo
             this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_laskutus = new System.Windows.Forms.TabPage();
-            this.nUD = new System.Windows.Forms.NumericUpDown();
-            this.cbVaraus = new System.Windows.Forms.ComboBox();
             this.laskuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cbLasku = new System.Windows.Forms.ComboBox();
             this.varausBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPoistaLasku = new System.Windows.Forms.Button();
             this.dgwLasku = new System.Windows.Forms.DataGridView();
@@ -97,9 +94,7 @@ namespace R22_Kurssityo
             this.varausidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
             this.btnHaeVaraus = new System.Windows.Forms.Button();
-            this.textVarausNumero = new System.Windows.Forms.TextBox();
             this.tab_varaus = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -200,7 +195,6 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.dgAsiakkaat)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tab_laskutus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwLasku)).BeginInit();
@@ -705,14 +699,9 @@ namespace R22_Kurssityo
             // 
             // tab_laskutus
             // 
-            this.tab_laskutus.Controls.Add(this.nUD);
-            this.tab_laskutus.Controls.Add(this.cbVaraus);
-            this.tab_laskutus.Controls.Add(this.cbLasku);
             this.tab_laskutus.Controls.Add(this.btnPoistaLasku);
             this.tab_laskutus.Controls.Add(this.dgwLasku);
-            this.tab_laskutus.Controls.Add(this.label15);
             this.tab_laskutus.Controls.Add(this.btnHaeVaraus);
-            this.tab_laskutus.Controls.Add(this.textVarausNumero);
             this.tab_laskutus.Location = new System.Drawing.Point(4, 22);
             this.tab_laskutus.Name = "tab_laskutus";
             this.tab_laskutus.Size = new System.Drawing.Size(763, 510);
@@ -721,39 +710,10 @@ namespace R22_Kurssityo
             this.tab_laskutus.UseVisualStyleBackColor = true;
             this.tab_laskutus.Enter += new System.EventHandler(this.tab_laskutus_Enter);
             // 
-            // nUD
-            // 
-            this.nUD.Location = new System.Drawing.Point(298, 210);
-            this.nUD.Name = "nUD";
-            this.nUD.Size = new System.Drawing.Size(120, 20);
-            this.nUD.TabIndex = 9;
-            // 
-            // cbVaraus
-            // 
-            this.cbVaraus.DataSource = this.laskuBindingSource1;
-            this.cbVaraus.DisplayMember = "lasku_id";
-            this.cbVaraus.FormattingEnabled = true;
-            this.cbVaraus.Location = new System.Drawing.Point(159, 210);
-            this.cbVaraus.Name = "cbVaraus";
-            this.cbVaraus.Size = new System.Drawing.Size(121, 21);
-            this.cbVaraus.TabIndex = 8;
-            this.cbVaraus.ValueMember = "lasku_id";
-            // 
             // laskuBindingSource1
             // 
             this.laskuBindingSource1.DataMember = "lasku";
             this.laskuBindingSource1.DataSource = this.dataSet1BindingSource;
-            // 
-            // cbLasku
-            // 
-            this.cbLasku.DataSource = this.varausBindingSource;
-            this.cbLasku.DisplayMember = "varaus_id";
-            this.cbLasku.FormattingEnabled = true;
-            this.cbLasku.Location = new System.Drawing.Point(8, 210);
-            this.cbLasku.Name = "cbLasku";
-            this.cbLasku.Size = new System.Drawing.Size(121, 21);
-            this.cbLasku.TabIndex = 7;
-            this.cbLasku.ValueMember = "varaus_id";
             // 
             // varausBindingSource
             // 
@@ -762,9 +722,9 @@ namespace R22_Kurssityo
             // 
             // btnPoistaLasku
             // 
-            this.btnPoistaLasku.Location = new System.Drawing.Point(343, 260);
+            this.btnPoistaLasku.Location = new System.Drawing.Point(267, 159);
             this.btnPoistaLasku.Name = "btnPoistaLasku";
-            this.btnPoistaLasku.Size = new System.Drawing.Size(75, 23);
+            this.btnPoistaLasku.Size = new System.Drawing.Size(244, 101);
             this.btnPoistaLasku.TabIndex = 4;
             this.btnPoistaLasku.Text = "Poista lasku";
             this.btnPoistaLasku.UseVisualStyleBackColor = true;
@@ -816,31 +776,15 @@ namespace R22_Kurssityo
             this.alvDataGridViewTextBoxColumn1.Name = "alvDataGridViewTextBoxColumn1";
             this.alvDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 301);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(101, 13);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Varausksen numero";
-            // 
             // btnHaeVaraus
             // 
-            this.btnHaeVaraus.Location = new System.Drawing.Point(29, 335);
+            this.btnHaeVaraus.Location = new System.Drawing.Point(8, 159);
             this.btnHaeVaraus.Name = "btnHaeVaraus";
-            this.btnHaeVaraus.Size = new System.Drawing.Size(75, 23);
+            this.btnHaeVaraus.Size = new System.Drawing.Size(253, 101);
             this.btnHaeVaraus.TabIndex = 1;
-            this.btnHaeVaraus.Text = "Hae varaus";
+            this.btnHaeVaraus.Text = "Tulosta lasku";
             this.btnHaeVaraus.UseVisualStyleBackColor = true;
             this.btnHaeVaraus.Click += new System.EventHandler(this.btnHaeVaraus_Click);
-            // 
-            // textVarausNumero
-            // 
-            this.textVarausNumero.Location = new System.Drawing.Point(146, 338);
-            this.textVarausNumero.Name = "textVarausNumero";
-            this.textVarausNumero.Size = new System.Drawing.Size(100, 20);
-            this.textVarausNumero.TabIndex = 0;
             // 
             // tab_varaus
             // 
@@ -1623,8 +1567,6 @@ namespace R22_Kurssityo
             ((System.ComponentModel.ISupportInitialize)(this.dgAsiakkaat)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tab_laskutus.ResumeLayout(false);
-            this.tab_laskutus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwLasku)).EndInit();
@@ -1710,9 +1652,7 @@ namespace R22_Kurssityo
         private System.Windows.Forms.TextBox tbPostitoimip;
         private System.Windows.Forms.BindingSource postiBindingSource;
         private DataSet1TableAdapters.postiTableAdapter postiTableAdapter;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnHaeVaraus;
-        private System.Windows.Forms.TextBox textVarausNumero;
         private System.Windows.Forms.TabPage tab_palvelut;
         private System.Windows.Forms.Button btn_uusimokki;
         private System.Windows.Forms.Label label16;
@@ -1791,9 +1731,6 @@ namespace R22_Kurssityo
         private System.Windows.Forms.Button btnPoistaLasku;
         private System.Windows.Forms.BindingSource laskuBindingSource1;
         private DataSet1TableAdapters.laskuTableAdapter laskuTableAdapter1;
-        private System.Windows.Forms.ComboBox cbLasku;
-        private System.Windows.Forms.ComboBox cbVaraus;
-        private System.Windows.Forms.NumericUpDown nUD;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPoistaAsiakas;
         private System.Windows.Forms.Button btnMuokkaaAsiakas;

@@ -199,17 +199,7 @@ namespace R22_Kurssityo
 
         private void tab_laskutus_Enter(object sender, EventArgs e)
         {
-            Validate();
-            laskuBindingSource.EndEdit();
-            laskuTableAdapter1.Update(this.dataSet1.lasku);
-            DateTime aloitus = dateTimePicker1.Value;
-            DateTime lopetus = dateTimePicker2.Value;
-            TimeSpan tp = aloitus - lopetus;
-            int erotusPaivina = tp.Days;
-            double verotonHinta = erotusPaivina * 100; //muutetaan tarvittaessa verolliseksi hinnaksi
-            //laskuTableAdapter1.Insert(cbLasku.SelectedIndex, cbVaraus.SelectedIndex, verotonHinta, 24);
             this.laskuTableAdapter1.Fill(this.dataSet1.lasku);
-
         }
 
         private void btnPoistaLasku_Click(object sender, EventArgs e)
@@ -226,8 +216,8 @@ namespace R22_Kurssityo
         private void btnHaeVaraus_Click(object sender, EventArgs e)
         {
             //Laskuun asiakkaan tietojen kirjoitus
-            string haku = textVarausNumero.Text;
-            string query = "SELECT * FROM varaus WHERE varaus_id="+haku+ " INNER JOIN asiakas ON varaus.asiakas_id=asiakas.asiakas_id";
+           // string haku = textVarausNumero.Text;
+           // string query = "SELECT * FROM varaus WHERE varaus_id="+haku+ " INNER JOIN asiakas ON varaus.asiakas_id=asiakas.asiakas_id";
             SaveFileDialog saveLasku = new SaveFileDialog();
             saveLasku.ShowDialog();
             if (saveLasku.FileName != "") 
