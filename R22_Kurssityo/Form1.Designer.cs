@@ -719,6 +719,7 @@ namespace R22_Kurssityo
             this.tab_laskutus.TabIndex = 2;
             this.tab_laskutus.Text = "Laskutus";
             this.tab_laskutus.UseVisualStyleBackColor = true;
+            this.tab_laskutus.Enter += new System.EventHandler(this.tab_laskutus_Enter);
             // 
             // nUD
             // 
@@ -771,6 +772,8 @@ namespace R22_Kurssityo
             // 
             // dgwLasku
             // 
+            this.dgwLasku.AllowUserToAddRows = false;
+            this.dgwLasku.AllowUserToDeleteRows = false;
             this.dgwLasku.AutoGenerateColumns = false;
             this.dgwLasku.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwLasku.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -781,7 +784,8 @@ namespace R22_Kurssityo
             this.dgwLasku.DataSource = this.laskuBindingSource1;
             this.dgwLasku.Location = new System.Drawing.Point(3, 3);
             this.dgwLasku.Name = "dgwLasku";
-            this.dgwLasku.Size = new System.Drawing.Size(410, 150);
+            this.dgwLasku.ReadOnly = true;
+            this.dgwLasku.Size = new System.Drawing.Size(508, 150);
             this.dgwLasku.TabIndex = 3;
             // 
             // laskuidDataGridViewTextBoxColumn
@@ -789,24 +793,28 @@ namespace R22_Kurssityo
             this.laskuidDataGridViewTextBoxColumn.DataPropertyName = "lasku_id";
             this.laskuidDataGridViewTextBoxColumn.HeaderText = "lasku_id";
             this.laskuidDataGridViewTextBoxColumn.Name = "laskuidDataGridViewTextBoxColumn";
+            this.laskuidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // varausidDataGridViewTextBoxColumn1
             // 
             this.varausidDataGridViewTextBoxColumn1.DataPropertyName = "varaus_id";
             this.varausidDataGridViewTextBoxColumn1.HeaderText = "varaus_id";
             this.varausidDataGridViewTextBoxColumn1.Name = "varausidDataGridViewTextBoxColumn1";
+            this.varausidDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // summaDataGridViewTextBoxColumn
             // 
             this.summaDataGridViewTextBoxColumn.DataPropertyName = "summa";
             this.summaDataGridViewTextBoxColumn.HeaderText = "summa";
             this.summaDataGridViewTextBoxColumn.Name = "summaDataGridViewTextBoxColumn";
+            this.summaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // alvDataGridViewTextBoxColumn1
             // 
             this.alvDataGridViewTextBoxColumn1.DataPropertyName = "alv";
             this.alvDataGridViewTextBoxColumn1.HeaderText = "alv";
             this.alvDataGridViewTextBoxColumn1.Name = "alvDataGridViewTextBoxColumn1";
+            this.alvDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // label15
             // 

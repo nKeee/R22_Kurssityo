@@ -174,8 +174,18 @@ namespace R22_Kurssityo
             varausTableAdapter.Update(this.dataSet1);
             dgVaraukset.CurrentRow.Cells[4].Value = DateTime.Now.ToString("dd/M/yyyy");
             this.varausTableAdapter.Update(this.dataSet1.varaus);
+            //Seuraavaksi laskutukseen uusi lasku:
 
- 
+            DateTime aloitus = (DateTime)dgVaraukset.CurrentRow.Cells[5].Value;
+            DateTime lopetus = (DateTime)dgVaraukset.CurrentRow.Cells[6].Value;
+            TimeSpan tp = lopetus - aloitus;
+            int erotusPaivina = tp.Days;
+            double verotonHinta = erotusPaivina * 100; //muutetaan tarvittaessa verolliseksi hinnaksi
+
+            int arvo = Convert.ToInt32(dgVaraukset.CurrentRow.Cells[0].Value);
+            laskuBindingSource1.EndEdit();
+            laskuTableAdapter1.Insert(arvo, arvo, verotonHinta, 24);
+
         }
 
         private void btnPoistaVaraus_Click(object sender, EventArgs e)
@@ -197,7 +207,8 @@ namespace R22_Kurssityo
             TimeSpan tp = aloitus - lopetus;
             int erotusPaivina = tp.Days;
             double verotonHinta = erotusPaivina * 100; //muutetaan tarvittaessa verolliseksi hinnaksi
-            laskuTableAdapter1.Insert(cbLasku.SelectedIndex, cbVaraus.SelectedIndex, verotonHinta, 24);
+            //laskuTableAdapter1.Insert(cbLasku.SelectedIndex, cbVaraus.SelectedIndex, verotonHinta, 24);
+            this.laskuTableAdapter1.Fill(this.dataSet1.lasku);
 
         }
 
