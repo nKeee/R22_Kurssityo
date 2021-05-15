@@ -16,8 +16,7 @@ namespace R22_Kurssityo
 {
     public partial class Form1 : Form
     {
-       
-        //MySqlConnection con;
+      
         public Form1()
         {
             InitializeComponent();
@@ -25,9 +24,6 @@ namespace R22_Kurssityo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //string connectionString = @"Dsn = village newbies; uid = root";
-            //con = new MySqlConnection(connectionString);
-            //con.Open();
             this.toimintaalueTableAdapter.Fill(this.dataSet1.toimintaalue);
             this.asiakasTableAdapter.Fill(this.dataSet1.asiakas);
             this.postiTableAdapter.Fill(this.dataSet1.posti);
@@ -174,6 +170,7 @@ namespace R22_Kurssityo
             varausTableAdapter.Update(this.dataSet1);
             dgVaraukset.CurrentRow.Cells[4].Value = DateTime.Now.ToString("dd/M/yyyy");
             this.varausTableAdapter.Update(this.dataSet1.varaus);
+
             //Seuraavaksi laskutukseen uusi lasku:
 
             DateTime aloitus = (DateTime)dgVaraukset.CurrentRow.Cells[5].Value;
@@ -213,21 +210,22 @@ namespace R22_Kurssityo
             this.laskuTableAdapter1.Update(this.dataSet1.lasku);
 
         }
-        private void btnHaeVaraus_Click(object sender, EventArgs e)
+        private void btnHaeVaraus_Click(object sender, EventArgs e)// oikeasti btnTulostaLasku mutta ei antanut vaihtaa nimeä...
         {
-            //Laskuun asiakkaan tietojen kirjoitus
-           // string haku = textVarausNumero.Text;
-           // string query = "SELECT * FROM varaus WHERE varaus_id="+haku+ " INNER JOIN asiakas ON varaus.asiakas_id=asiakas.asiakas_id";
-            SaveFileDialog saveLasku = new SaveFileDialog();
-            saveLasku.ShowDialog();
-            if (saveLasku.FileName != "") 
+            //Laskun kirjoitus tiedostoon
+            var polku = "C:\\temp\\data.txt";
+            string lasku = "Lasku id: " + dgwLasku.CurrentRow.Cells[0].Value.ToString() +
+                " Asiakas id: " + dgwLasku.CurrentRow.Cells[1].Value.ToString() +
+                " Summa: " + dgwLasku.CurrentRow.Cells[3].Value.ToString() +
+                " Alv: " + dgwLasku.CurrentRow.Cells[4].Value.ToString();
+
+
+            using (StreamWriter sw = new StreamWriter(polku))
             {
-                StreamWriter sw = new StreamWriter(saveLasku.FileName);
-                sw.WriteLine(query);
+                sw.WriteLine(lasku);
                 sw.Flush();
                 sw.Close();
             }
-            //var cmd = new MySqlCommand(query, con);
             //MessageBox.Show(cmd.ExecuteReader().Read().ToString());
         
         }
