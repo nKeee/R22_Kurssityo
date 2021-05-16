@@ -216,8 +216,8 @@ namespace R22_Kurssityo
             var polku = "C:\\temp\\data.txt";
             string lasku = "Lasku id: " + dgwLasku.CurrentRow.Cells[0].Value.ToString() +
                 " Asiakas id: " + dgwLasku.CurrentRow.Cells[1].Value.ToString() +
-                " Summa: " + dgwLasku.CurrentRow.Cells[3].Value.ToString() +
-                " Alv: " + dgwLasku.CurrentRow.Cells[4].Value.ToString();
+                " Summa: " + dgwLasku.CurrentRow.Cells[2].Value.ToString() +
+                " Alv: " + dgwLasku.CurrentRow.Cells[3].Value.ToString();
 
 
             using (StreamWriter sw = new StreamWriter(polku))
